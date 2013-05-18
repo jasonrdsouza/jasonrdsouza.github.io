@@ -5,7 +5,9 @@ Personal Landing Page
 
 Todo
 ----
-- migrate over blog
+- migrate blog
 - make a better layout
   - bootstrap?
-- add resume
+- migrate resume
+- change blog. and resume. mappings
+- change files. to slides.
