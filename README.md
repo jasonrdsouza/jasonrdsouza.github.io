@@ -11,3 +11,8 @@ Todo
 - migrate resume
 - change blog. and resume. mappings
 - change files. to slides.
+- setup rake tasks
+  - to make new post
+  - to spellcheck post
+  - to move from drafts to posts
+  
