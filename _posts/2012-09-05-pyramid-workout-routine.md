@@ -34,13 +34,10 @@ Pyramid Set of Incline Bench Press. In this case, W = 135, delta = 10.
 ### Day 1 (Chest, Triceps, Shoulders)
 
 - Bench Press (pyramid set for each of the sub-bullet points)
-
   - Regular 
   - Incline
   - Decline
-
 - Pushups (no pyramid)
-
   - Normal - 25 reps
   - Offset Right - 25 reps
   - Offset Left - 25 reps
@@ -48,22 +45,16 @@ Pyramid Set of Incline Bench Press. In this case, W = 135, delta = 10.
   - Diamond - 25 reps
   - Wide - 25 reps
   - Normal - 25 reps
-
 - Dips (pyramid set)
 - Tricep Extensions (pyramid set for each)
-  
   - Cables
   - Bar
-
 - Shoulder Raises (half pyramid each)
-
   - Front
   - Side
-
 - Shoulder Shrugs (pyramid set)
 - Shoulder Press (pyramid set)
 - Flex
-
   - Finish off with a flex and hold for each muscle group worked
   - Flex and hold for at least 10 seconds
 
@@ -77,10 +68,8 @@ Pyramid Set of Incline Bench Press. In this case, W = 135, delta = 10.
 - Lower Back Extensions (4 sets of 20)
 - Upright Row (pyramid set)
 - Preacher Curls (pyramid set)
-
   - alternate wide and narrow grip
 - Dumbell Curls (4 sets of 8)
-
   - alternate normal and hammer grip
 - Forearms (pyramid set)
 - Flex
@@ -89,13 +78,11 @@ Pyramid Set of Incline Bench Press. In this case, W = 135, delta = 10.
 ### Day 3 (Legs, Abs)
 
 - Squats (pyramid set)
-
   - make this one a 7 step pyramid instead of 5
   - the rep counts should be: 14, 12, 10, 8, 10, 12, 14
 - Weighted Lunges (pyramid set)
 - Calve Raises (pyramid set)
 - Abs (done in fairly quick succession)
-
   - 25x25x25x25 crunches (center, right, left, center)
   - Reverse Isometric Crunches (3 sets of 25)
   - Slow Bicycles (2 sets of 50)
