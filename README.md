@@ -7,12 +7,16 @@ Todo
 ----
 - migrate blog
 - make a better layout
-  - bootstrap?
+  - use the two.js theme 
 - migrate resume
 - change blog. and resume. mappings
-- change files. to slides.
+- migrate files/ slides
+  - from seperate app
+  - use represent tool for generation
 - setup rake tasks
   - to make new post
   - to spellcheck post
   - to move from drafts to posts
-  
+  - to convert slides using represent
+- add google analytics
+
