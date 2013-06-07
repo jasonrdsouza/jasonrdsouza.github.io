@@ -1,2 +1,6 @@
 # Ignore generated files
 _site/
+
+# Sublime Text project files
+*.sublime-*
+
