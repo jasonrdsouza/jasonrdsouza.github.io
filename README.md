@@ -9,14 +9,11 @@ Todo
 - make a better layout
   - use the two.js theme 
 - migrate resume
-- change blog. and resume. mappings
-- migrate files/ slides
-  - from seperate app
-  - use represent tool for generation
+- change blog. and resume. mappings to point to /blog and /resume
 - setup rake tasks
   - to make new post
   - to spellcheck post
   - to move from drafts to posts
-  - to convert slides using represent
+  - to convert slides
 - add google analytics
 
