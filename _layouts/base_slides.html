@@ -15,15 +15,15 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/reveal.min.css">
-    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="/assets/reveal/css/reveal.min.css">
+    <link rel="stylesheet" href="/assets/reveal/css/theme/default.css" id="theme">
 
     <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="{{ ASSET_PATH }}/lib/css/zenburn.css">
+    <link rel="stylesheet" href="/assets/reveal/lib/css/zenburn.css">
 
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
-      document.write( '<link rel="stylesheet" href="{{ ASSET_PATH }}/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+      document.write( '<link rel="stylesheet" href="/assets/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
     </script>
 
     
@@ -47,8 +47,8 @@
 
     </div>
 
-    <script src="{{ ASSET_PATH }}/lib/js/head.min.js"></script>
-    <script src="{{ ASSET_PATH }}/js/reveal.min.js"></script>
+    <script src="/assets/reveal/lib/js/head.min.js"></script>
+    <script src="/assets/reveal/js/reveal.min.js"></script>
 
     <script>
 
@@ -65,18 +65,18 @@
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: '{{ ASSET_PATH }}/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                { src: '{{ ASSET_PATH }}/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                { src: '{{ ASSET_PATH }}/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                { src: '{{ ASSET_PATH }}/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                { src: '{{ ASSET_PATH }}/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                { src: '{{ ASSET_PATH }}/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-                // { src: '{{ ASSET_PATH }}/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-                // { src: '{{ ASSET_PATH }}/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                { src: '/assets/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '/assets/reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/assets/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '/assets/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '/assets/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: '/assets/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                // { src: '/assets/reveal/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                // { src: '/assets/reveal/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
             ]
         });
 
     </script>
-    {% include JB/analytics %}
   </body>
+  
 </html>
