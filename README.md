@@ -15,5 +15,7 @@ Todo
   - to spellcheck post
   - to move from drafts to posts
   - to convert slides
+    - use pandoc for the actual conversion
+    - make YAML metadata
 - add google analytics
 
