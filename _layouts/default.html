@@ -1,46 +1,74 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/assets/css/syntax.css">
-
-        <!-- Custom CSS -->
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/pure-min.css">
         <link rel="stylesheet" href="/assets/css/main.css">
 
+        <!-- Google Analytics -->
+
     </head>
+    
     <body>
+        <div class="pure-g-r" id="layout">
+            <div class="sidebar pure-u">
+                <header class="header">
+                    <hgroup>
+                        <h1 class="brand-title">{{ site.name }}</h1>
+                        <h2 class="brand-tagline">Engineer, Hacker, Comedian</h2>
+                    </hgroup>
 
-        <div class="container">
-          <div class="site">
-            <div class="header">
-              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-              <a class="extra" href="/">home</a>
+                    <nav class="nav">
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a class="pure-button" href="http://www.jasondsouza.org/blog">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="pure-button" href="http://www.jasondsouza.org/resume">Resume</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="pure-button" href="http://github.com/jasonrdsouza">Github</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="pure-button" href="http://linkedin.com/in/jasonrdsouza">LinkedIn</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="pure-button" href="http://plus.google.com/104803793152242965343">Google+</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="pure-button" href="http://twitter.com/jasonrdsouza">Twitter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="pure-button" href="http://google.com/search?q=jasonrdsouza">Around the Web</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
             </div>
-     
-                {{ content }}
 
-            <div class="footer">
-              <div class="contact">
-                <p>
-                  Jason Dsouza<br />
-                  Software Engineer<br />
-                  jasonrdsouza@gmail.com
-                </p>
-              </div>
-              <div class="contact">
-                <p>
-                  <a href="http://jasondsouza.org/">jasondsouza.com</a><br />
-                  <a href="http://github.com/jasonrdsouza/">github.com/jasonrdsouza</a><br />
-                </p>
-              </div>
+            <div class="pure-u-1">
+                <div class="content">
+                    
+                    {{ content }}
+
+                    <footer class="footer">
+                        <div class="pure-menu pure-menu-horizontal pure-menu-open">
+                            <ul>
+                                <li><a href="mailto:jasonrdsouza@gmail.com">Contact Me</a></li>
+                                <li><a href="#">&copy; Jason Dsouza</a></li>
+                            </ul>
+                        </div>
+                    </footer>
+
+                </div>
             </div>
-          </div>
-        </div> <!-- /container -->
+        </div>
 
+        <script src="http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
     </body>
 </html>

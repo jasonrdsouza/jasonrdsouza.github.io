@@ -18,13 +18,3 @@ I generally agree with these three rules:
 2. No problem should ever have to be solved twice.
 3. Boredom and drudgery are evil.
 
-<p class="meta">Links</p>
-
-The easiest way to get in contact with me is via email (jasonrdsouza@gmail.com). You can also check me out on:
-- [Github] (http://github.com/jasonrdsouza)
-- [My Blog] (blog)
-- [My Resume] (resume)
-- [LinkedIn] (http://linkedin.com/in/jasonrdsouza)
-- [Google+] (http://plus.google.com/104803793152242965343)
-- [Twitter] (http://twitter.com/jasonrdsouza)
-- Various other places as [jasonrdsouza] (http://google.com/search?q=jasonrdsouza)
