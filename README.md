@@ -6,12 +6,14 @@ Personal Landing Page
 Todo
 ----
 - migrate blog
-- make a better layout
-  - use the two.js theme 
 - migrate resume
 - change blog. and resume. mappings to point to /blog and /resume
 - setup rake tasks
   - to make new post
+  - setup metadata
+    - author
+    - tags
+    - etc
   - to spellcheck post
   - to move from drafts to posts
   - to convert slides
