@@ -8,6 +8,7 @@ Todo
 - migrate blog
 - migrate resume
 - change blog. and resume. mappings to point to /blog and /resume
+- update invoice to have my info on it
 - setup rake tasks
   - to make new post
   - setup metadata
