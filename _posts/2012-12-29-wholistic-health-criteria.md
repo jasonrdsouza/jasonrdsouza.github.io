@@ -2,6 +2,7 @@
 layout: post
 title:  "Wholistic Health Criteria"
 date:   2012-12-29 15:30:54
+author: Jason
 published: true 
 categories: fitness
 tags: fitness health

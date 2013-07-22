@@ -2,6 +2,7 @@
 layout: post
 title:  "Pyramid Workout Routine"
 date:   2012-09-05 09:26:54
+author: Jason
 published: true 
 categories: fitness
 tags: fitness lifting

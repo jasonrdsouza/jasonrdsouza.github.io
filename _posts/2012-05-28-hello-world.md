@@ -2,6 +2,7 @@
 layout: post
 title:  "Hello World."
 date:   2012-05-28 21:33:54
+author: Jason
 published: true
 categories: opinion
 tags: intro personal
