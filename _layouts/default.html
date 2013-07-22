@@ -19,7 +19,7 @@
             <div class="sidebar pure-u">
                 <header class="header">
                     <hgroup>
-                        <h1 class="brand-title">{{ site.name }}</h1>
+                        <h1 class="brand-title"><a href="{{ site.url }}">{{ site.name }}</a></h1>
                         <h2 class="brand-tagline">Engineer, Hacker, Comedian</h2>
                     </hgroup>
 
@@ -59,8 +59,10 @@
                     <footer class="footer">
                         <div class="pure-menu pure-menu-horizontal pure-menu-open">
                             <ul>
-                                <li><a href="mailto:jasonrdsouza@gmail.com">Contact Me</a></li>
-                                <li><a href="#">&copy; Jason Dsouza</a></li>
+                                <li class="mail"><a href="mailto:jasonrdsouza@gmail.com">Email</a></li>
+                                <li class="tel"><a href="tel:(619)537-6892">Phone</a></li>
+                                <li class="web"><a href="http://jasondsouza.org">Web</a></li>
+                                <li class="ad"><a href="#">&copy; Jason Dsouza</a></li>
                             </ul>
                         </div>
                     </footer>
@@ -69,6 +71,5 @@
             </div>
         </div>
 
-        <script src="http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
     </body>
 </html>

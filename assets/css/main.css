@@ -149,6 +149,25 @@ a:focus {
 .footer .pure-menu a:focus {
     background: none;
 }
+.footer ul li.ad {
+    background-image:url(/assets/icons/icn-ad.gif);
+}
+
+.footer ul li.mail {
+    background-image:url(/assets/icons/icn-mail.gif);
+}
+
+.footer ul li.tel {
+    background-image:url(/assets/icons/icn-tel.gif);
+}
+
+.footer ul li.web {
+    background-image:url(/assets/icons/icn-web.gif);
+}
+.footer ul li {
+    background-repeat: no-repeat;
+    margin-top:-2px;
+}
 
 @media (max-width: 767px) {
     .sidebar {
@@ -174,3 +193,4 @@ a:focus {
         padding: 2em 1em 0;
     }
 }
+
