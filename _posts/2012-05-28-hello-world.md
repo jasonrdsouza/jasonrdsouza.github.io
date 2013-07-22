@@ -4,7 +4,7 @@ title:  "Hello World."
 date:   2012-05-28 21:33:54
 published: true
 categories: opinion
-tags: 
+tags: intro personal
 ---
 
 Sometimes people ask me what my interests are. Frequently, I have a hard time answering that question. 

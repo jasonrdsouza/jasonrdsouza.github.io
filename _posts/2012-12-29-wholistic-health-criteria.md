@@ -4,9 +4,11 @@ title:  "Wholistic Health Criteria"
 date:   2012-12-29 15:30:54
 published: true 
 categories: fitness
-tags: 
+tags: fitness health
 ---
 
+
+A list of things to do to maintain good health!
 
 - Lifting
   - preferably in the morning
