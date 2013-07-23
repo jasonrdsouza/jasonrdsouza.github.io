@@ -5,9 +5,8 @@ Personal Landing Page
 
 Todo
 ----
-- migrate blog
 - migrate resume
-- change blog. and resume. mappings to point to /blog and /resume
+- change resume. mapping to point to /resume
 - setup rake tasks
   - to make new post
   - setup metadata
