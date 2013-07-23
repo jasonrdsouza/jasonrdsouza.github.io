@@ -3,10 +3,10 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 a {
     text-decoration: none;
     color: rgb(142, 142, 214);
+    font-family: 'Oxygen', sans-serif;
 }
 a:hover,
 a:focus {
@@ -40,10 +40,12 @@ a:focus {
 }
 .brand-title {
     text-transform: uppercase;
+    font-family: 'Oxygen', sans-serif;
 }
 .brand-tagline {
     font-weight: 300;
     color: rgb(142, 142, 214);
+    font-family: 'Oxygen', sans-serif;
 }
 
 .nav-list {
@@ -55,6 +57,7 @@ a:focus {
     display: inline-block;
     *display: inline;
     zoom: 1;
+    font-family: 'Oxygen', sans-serif;
 }
 .nav-item a {
     background: transparent;
@@ -77,6 +80,7 @@ a:focus {
     font-size: 80%;
     font-weight: 500;
     letter-spacing: 0.1em;
+    font-family: 'Oxygen', sans-serif;
 }
 
 .content {
@@ -90,6 +94,7 @@ a:focus {
     font-size: 2em;
     color: #222;
     margin-bottom: 0.2em;
+    font-family: 'Oxygen', sans-serif;
 }
 .post-avatar {
     border-radius: 50px;
@@ -97,9 +102,9 @@ a:focus {
     margin-left: 1em;
 }
 .post-description {
-    font-family: Georgia, "Cambria", serif;
     color: #444;
     line-height: 1.8em;
+    font-family: 'Oxygen', sans-serif;
 }
 .post-meta {
     color: #999;
