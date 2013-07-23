@@ -8,7 +8,6 @@ Todo
 - migrate blog
 - migrate resume
 - change blog. and resume. mappings to point to /blog and /resume
-- update invoice to have my info on it
 - setup rake tasks
   - to make new post
   - setup metadata
@@ -20,5 +19,3 @@ Todo
   - to convert slides
     - use pandoc for the actual conversion
     - make YAML metadata
-- add google analytics
-
