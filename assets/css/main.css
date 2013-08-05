@@ -214,3 +214,8 @@ a:focus {
     border-bottom: 2px solid #eee;
     display: inline-block;
 }
+
+.left-border {
+    border-left: 5px solid #ddd;
+    padding-left: 1.5em;
+}

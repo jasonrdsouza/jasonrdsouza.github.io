@@ -5,30 +5,36 @@ title: Resume
 
 
 <div class="resume-section">
+  <div class="left-border">
     <h4 class="resume-section-header">Experience</h4>
 
     <h3>Etiam iaculis iaculis lobortis.</h3>
     <p>
         Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum. Morbi fermentum dui sit amet libero tincidunt rutrum. Nam sodales consequat metus sed accumsan.
     </p>
+  </div>
 </div>
 
 <div class="resume-section">
+  <div class="left-border">
     <h4 class="resume-section-header">Education</h4>
 
     <h3>Etiam iaculis iaculis lobortis.</h3>
     <p>
         Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum. Morbi fermentum dui sit amet libero tincidunt rutrum. Nam sodales consequat metus sed accumsan.
     </p>
+  </div>
 </div>
 
 <div class="resume-section">
+  <div class="left-border">
     <h4 class="resume-section-header">Projects</h4>
 
     <h3>Etiam iaculis iaculis lobortis.</h3>
     <p>
         Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum. Morbi fermentum dui sit amet libero tincidunt rutrum. Nam sodales consequat metus sed accumsan.
     </p>
+  </div>
 </div>
 
 
