@@ -3,20 +3,19 @@ layout: post
 title:  "Pyramid Workout Routine"
 date:   2012-09-05
 author: Jason
-published: true 
 categories: fitness
 tags: fitness lifting
 ---
 
 
-This workout should be done for 3 consecutive days, followed by 1 day of rest. 
-Most exercises are done with pyramid sets. This means that you do 5 total sets for each. 
-12 reps for the first set, 10 reps for the second, 8 for the third, 10 for the fourth, and 12 for the fifth. 
-Start with a weight for each pyramid that allows you to do all the reps of every set, 
-where you are failing on the last rep. So, for the first set, pick a weight W that allows you to do 
-all 12 reps to failure on the last one. Then, for the second set, get a weight W + delta which allows 
-you to do all 10 reps to failure on the last one. Likewise, for the third set choose a weight W + (delta * 2). 
-Then, for the fourth set repeat what you did for the second set, and for the fifth set repeat what you 
+This workout should be done for 3 consecutive days, followed by 1 day of rest.
+Most exercises are done with pyramid sets. This means that you do 5 total sets for each.
+12 reps for the first set, 10 reps for the second, 8 for the third, 10 for the fourth, and 12 for the fifth.
+Start with a weight for each pyramid that allows you to do all the reps of every set,
+where you are failing on the last rep. So, for the first set, pick a weight W that allows you to do
+all 12 reps to failure on the last one. Then, for the second set, get a weight W + delta which allows
+you to do all 10 reps to failure on the last one. Likewise, for the third set choose a weight W + (delta * 2).
+Then, for the fourth set repeat what you did for the second set, and for the fifth set repeat what you
 did for the first set.
 
 
@@ -34,7 +33,7 @@ Pyramid Set of Incline Bench Press. In this case, W = 135, delta = 10.
 ### Day 1 (Chest, Triceps, Shoulders)
 
 - Bench Press (pyramid set for each of the sub-bullet points)
-  - Regular 
+  - Regular
   - Incline
   - Decline
 - Pushups (no pyramid)
