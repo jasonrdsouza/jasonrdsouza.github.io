@@ -4,3 +4,5 @@ _site/
 # Sublime Text project files
 *.sublime-*
 
+# Temporary files
+*~
