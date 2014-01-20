@@ -6,3 +6,5 @@ _site/
 
 # Temporary files
 *~
+
+.DS_Store
