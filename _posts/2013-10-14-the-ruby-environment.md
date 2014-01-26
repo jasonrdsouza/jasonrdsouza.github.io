@@ -2,6 +2,7 @@
 layout: post
 title:  "The Ruby Environment"
 date:   2013-10-14
+author: Jason
 categories: programming
 tags: ruby, programming
 ---

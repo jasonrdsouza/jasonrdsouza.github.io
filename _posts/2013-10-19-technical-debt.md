@@ -2,6 +2,7 @@
 layout: post
 title:  "On Technical Debt"
 date:   2013-10-19
+author: Jason
 categories: software-engineering
 tags: productivity, software-engineering
 ---
