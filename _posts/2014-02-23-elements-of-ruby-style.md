@@ -1,0 +1,268 @@
+---
+layout: post
+title:  "The Elements of (Ruby) Style"
+date:   2014-02-23
+author: Jason
+categories: programming
+tags: programming, ruby, style
+---
+
+
+
+I’ve been working with Ruby a lot lately, and have come to enjoy the expressive succinctness of the language. It is credited as a language that strives to make programming enjoyable, and minimize the amount of work the programmer must do. To accomplish those goals, Ruby allows the flexibility to do things in many different ways. This approach, in contrast with the “[one right and obvious way](http://python.org/doc/humor/#the-zen-of-python)” mentality, allows the programmer to use a style suited to their way of approaching the problem at hand. The resulting syntactic flexibility is a double edged sword, however, and can lead to concise and beautiful code in the right hands, or utterly incomprehensible code in the wrong ones.
+
+In that regard, Ruby seems quite similar to English. Both are complex, multifaceted languages, which take time to perfect, and must be studied before they can be applied effectively. One of the seminal works regarding English writing style is a book by William Strunk Jr. and E. B. White called “[The Elements of Style](http://en.wikipedia.org/wiki/The_Elements_of_Style)”. Instead of a comprehensive guide, the short book presents a few powerful rules that greatly enhance the quality of most writing.  This post is my attempt at creating a similar style guide for Ruby. For a more wholistic Ruby style guide, see: [https://github.com/bbatsov/ruby-style-guide](https://github.com/bbatsov/ruby-style-guide).
+
+
+Elements
+--------
+
+### Create Importable Scripts
+
+- Try to write scripts in a reusable manner. Encapsulate the logic into a class with reasonable arguments, and a simple interface, and then call that class upon invocation of your script. Using this idiom, your script can be imported by other ruby code (without the side-effect of running the script), or run from the command line.
+
+{% highlight ruby %}
+class Utility
+  # utility class logic
+end
+
+if __FILE__ == $0
+  # code in this block is only executed if the file is run from the command line
+  Utility.new(opts).run
+end
+{% endhighlight %}
+
+
+### Prefer Iterators (and blocks) to For Loops
+
+- In ruby, you almost never need a for loop. Using iterator methods with blocks is cleaner, and more idiomatic. There are many iterator methods, so choose the one that best suits your needs.
+
+{% highlight ruby %}
+# perform an action a certian number of times
+5.times {|index| ... }
+(1..10).each{|i| ...}
+
+# looping through collections
+wines.each {|wine| wine.pour} # use each for side effects
+wines.map {|wine| wine.vintage} # use map to transform an enumerable
+wines.select {|wine| wine.type == :merlot}
+wines.reject {|wine| wine.price > 30}
+wines.include?(my_favorite_wine)
+{% endhighlight %}
+
+
+### Prefer String Interpolation
+
+- It is preferable to use the interpolation syntax rather than the concatenation (+) operator to construct strings.
+- In cases where a string does not need to be interpolated, favor single quotes.
+
+{% highlight ruby %}
+s = "strings"
+# Bad
+puts "Concatenated " + s + " example"
+puts "Hello World"
+
+# Good
+puts "Concatenated #{s} example"
+puts 'Hello World'
+{% endhighlight %}
+
+
+### Favor End of Line Modifiers
+
+- In cases of single line conditional statements, it is preferable to use an end of line modifier rather than a traditional check
+- Additionally, favor `unless` over negated `if` statements
+
+{% highlight ruby %}
+# Bad
+if !wine.corked?
+  drink(wine)
+end
+
+# Good
+drink(wine) unless wine.corked?
+{% endhighlight %}
+
+
+### Utilize Method Qualifiers
+
+- The `?` qualifier signals that the method returns a boolean value
+- The `!` qualifier signals that the method performs a dangerous (usually state changing) operation
+
+{% highlight ruby %}
+cellar.empty? # should return boolean value
+cellar.clear! # modifies the state of the cellar
+{% endhighlight %}
+
+
+### Favor "Or Equal" Idiom over nil Checks
+
+- The `a ||= b` operator, which is syntactic sugar for `a || a = b`, is the idiomatic way to set a variable if it is not already set.
+
+{% highlight ruby %}
+# Bad
+if a.nil?
+  a = b
+end
+
+# Less Bad
+a = b if a.nil?
+
+# Good
+a ||= b
+{% endhighlight %}
+
+
+### Favor Block Yielding Methods
+
+- Instead of creating a class with cleanup methods that the user must call when done, yield a block that they can use, and perform the cleanup once their block finishes.
+- Likewise, when using classes, prefer block yielding functionality.
+
+{% highlight ruby %}
+# Bad
+begin
+  file = File.open("/tmp/filename", "w")
+  file.write("some text")
+rescue IOError => e
+# need to ensure that the file handle gets closed even if an error occurs
+ensure
+  file.close
+end
+
+# Good
+File.open('/tmp/filename', 'w') {|file| file.write("some text")} # file handle closed once block exits
+{% endhighlight %}
+
+
+### Prefer Hash for Optional Args
+
+- An optional hash paramater should be used to support optional arguments to functions. A hash is preferable to the default optional args syntax because it allows the arguments to be named, and unordered. Defaulting optional values can be achieved by merging with a defaults hash.
+
+{% highlight ruby %}
+# Bad 
+def foo(required_param, opt_arg1 = 'default1', opt_arg2 = 'default2', opt_arg3 = 'default3')
+  # ...
+end
+
+# Good
+def foo(required_param, optional_params = {})
+  opts = {:arg1 => 'default1',
+          :arg2 => 'default2',
+          :arg3 => 'default3'}.merge(optional_params)
+  # ...
+end
+{% endhighlight %}
+
+
+### Forgo Explicit Returns
+
+- All ruby functions return their last evaluated expression. Since all functions return something, ensure that what is returned is meaningful. Furthermore, given their implicit nature, it is redundant to explicitly return at the end of a function.
+- Returns may be used to bail out of a function early, but are otherwise unnecessary.
+
+{% highlight ruby %}
+# Bad
+def fib(n)
+  return 1 if n < 2 # usage of return here is ok
+  return fib(n-1) + fib(n-2) # the return here is unnecessary
+end
+
+# Good
+def fib(n)
+  (0..n).inject([1,0]) { |(a,b), _| [b, a+b] }.first
+end
+{% endhighlight %}
+
+
+### No Empty Parentheses
+
+- Omit parentheses when creating a method that doesn't accept any arguments. Likewise, parentheses are unnecessary when calling a method that accepts no arguments.
+
+
+### Proper Block Semantics
+
+- Single line blocks should use the bracket style, whereas blocks spanning multiple lines should use the do syntax
+
+{% highlight ruby %}
+# Bracket style block
+wines.map{|w| w.name}.sort
+
+# Do style block
+cellars.each do |cellar|
+  cellar.wines.each do |wine|
+    wine.pour! if desired_wines.include?(wine)
+  end
+end
+{% endhighlight %}
+
+
+### And, Or vs &&, ||
+
+- `&&` and `||` are to be used for boolean expressions, whereas `and` and `or` are meant for control flow
+
+{% highlight ruby %}
+# boolean expression example
+if condition1 && condition2
+  do_something
+end
+
+# control flow example
+buy_wine and open_wine and drink_wine
+
+# example of the differences
+a = true && false
+  #=> false (a == false) # the && operator takes precedence
+a = true and false
+  #=> false (a == true) # the = operator takes precedence
+{% endhighlight %}
+
+
+### Prefer Static Methods, and a Functional Approach
+
+- Static classes and methods are easier to invoke, and easier to test. Similarly, writing your code in a functional way will result in methods that are easier to reason about, and more likely to be correct.
+
+{% highlight ruby %}
+class Test
+  # static method
+  def self.method1
+    ...
+  end
+
+  # instance method
+  def method2
+    ...
+  end
+end
+
+
+keys = [k1, k2, k3, ...]
+values = [v1, v2, v3, ...]
+
+# Bad
+result = {}
+keys.each_with_index do |key, index|
+  result[k] = values[index]
+end
+
+# Good
+result = Hash[keys.zip(values)]
+{% endhighlight %}
+
+
+### Prefer Self-documenting Code to Comments
+
+- Ruby's expressiveness leaves no excuse for code with poor readability. Name variables, methods, and classes pragmatically, and let the code itself serve as documentation. Docs are hard to maintain, and do more harm than good if they are out of date, so clear and concise code that doesn't require further explanation is ideal.
+
+
+### Favor Small, Succient, Well Named Methods
+
+- It is best to keep methods small and simple. Refactoring large functions into a collection of smaller, appropriately named ones will enhance readability and maintainability.
+
+
+Summary
+-------
+
+Quality Ruby code should be simple, readable, and [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself). The rules above are solid guidelines that will lead to better code if followed properly. That being said, as with any set of rules, there are always exceptions, so be judicious in their application. As Ralph Waldo Emerson once said,
+
+> "A foolish consistency is the hobgoblin of little minds"
+
+
