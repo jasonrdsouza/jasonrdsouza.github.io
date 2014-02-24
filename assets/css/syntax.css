@@ -1,4 +1,14 @@
-.highlight  { background: #ffffff; }
+.highlight  { background: rgb(250, 250, 250); color: #333}
+.highlight .hll { background-color: #ffffcc }
+.highlight {
+  padding-right: 2em;
+  padding-left: 2em;
+  border: 1px solid #eee;
+  border-left-width: 0;
+  border-right-width: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
