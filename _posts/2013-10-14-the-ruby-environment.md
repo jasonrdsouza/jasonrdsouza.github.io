@@ -36,9 +36,9 @@ Once you have Ruby installed, the best way to get a feel for it is to experiment
 The ruby standard library is already pretty full featured, but additional functionality can be acquired through the installation of prepackaged ruby programs and libraries called Gems. Gems are installed using the gem program which comes with ruby. In addition to libraries you can make use of in your code, lots of standalone programs written in ruby are distributed as gems. In fact, the preferred method of installing the aforementioned PRY is through gem.
 
 Installing a gem is done on the command line like so:
-  {% highlight bash %}
-    gem install pry
-  {% endhighlight %}
+{% highlight bash %}
+  gem install pry
+{% endhighlight %}
 
 
 ### Rails
