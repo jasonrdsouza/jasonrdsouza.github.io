@@ -1,0 +1,7 @@
+baseurl = "http://www.jasondsouza.org"
+languageCode = "en-us"
+title = "Jason Dsouza"
+
+[params]
+description = "Engineer, Hacker, Sculptor"
+username = "jasonrdsouza"
