@@ -12,6 +12,7 @@
       {{ range .Site.Menus.main }}
         <li><a href="{{.Url}}"> {{ .Name }} </a></li>
       {{end}}
+      <li><a href="/resume">Resume</a></li>
       <li><a href="http://twitter.com/{{ .Site.Params.username }}">@{{ .Site.Params.username }}</a></li>
     </ul>
 
