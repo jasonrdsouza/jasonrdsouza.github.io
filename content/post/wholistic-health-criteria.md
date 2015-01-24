@@ -2,6 +2,7 @@
 date = 2012-12-29T21:13:58Z
 draft = false
 title = "Wholistic Health Criteria"
+description = "Mainly for my own use, a short list of things I do to stay healthy."
 +++
 
 
@@ -19,8 +20,7 @@ A list of things to do to maintain good health!
     - lots of protein
     - lots of fish
     - lots of vegetables/ fruits
-    - caveman diet
-    - mediterranean diet
+    - caveman/ mediterranean diet
 - Cardio
     - run, bike, swim, sports
     - at least walk

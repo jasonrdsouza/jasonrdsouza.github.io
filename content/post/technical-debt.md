@@ -2,6 +2,7 @@
 date = 2013-10-19T21:13:58Z
 draft = false
 title = "On Technical Debt"
+description = "Technical debt is not universally bad, in the same way that regular debt is not universally bad. This post is a summary of my thoughts on how to think about and deal with technical debt in an intelligent manner."
 +++
 
 

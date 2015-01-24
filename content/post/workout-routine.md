@@ -2,6 +2,7 @@
 date = 2012-09-05T21:13:58Z
 draft = false
 title = "Workout Routine"
+description = "This is the workout routine I used to get in the best shape of my life. It doesn't include the diet or cardio training portion, which I may create as separate posts."
 +++
 
 

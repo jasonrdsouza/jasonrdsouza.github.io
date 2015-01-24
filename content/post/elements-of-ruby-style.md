@@ -18,7 +18,7 @@ Elements
 
 - Try to write scripts in a reusable manner. Encapsulate the logic into a class with reasonable arguments, and a simple interface, and then call that class upon invocation of your script. Using this idiom, your script can be imported by other ruby code (without the side-effect of running the script), or run from the command line.
 
-{{% highlight ruby %}}
+```ruby
 class Utility
     # utility class logic
 end
@@ -27,14 +27,14 @@ if __FILE__ == $0
     # code in this block is only executed if the file is run from the command line
     Utility.new(opts).run
 end
-{{% /highlight %}}
+```
 
 
 ### Prefer Iterators (and blocks) to For Loops
 
 - In ruby, you almost never need a for loop. Using iterator methods with blocks is cleaner, and more idiomatic. There are many iterator methods, so choose the one that best suits your needs.
 
-{{% highlight ruby %}}
+```ruby
 # perform an action a certian number of times
 5.times {|index| ... }
 (1..10).each{|i| ...}
@@ -45,7 +45,7 @@ wines.map {|wine| wine.vintage} # use map to transform an enumerable
 wines.select {|wine| wine.type == :merlot}
 wines.reject {|wine| wine.price > 30}
 wines.include?(my_favorite_wine)
-{{% /highlight %}}
+```
 
 
 ### Prefer String Interpolation
@@ -53,7 +53,7 @@ wines.include?(my_favorite_wine)
 - It is preferable to use the interpolation syntax rather than the concatenation (+) operator to construct strings.
 - In cases where a string does not need to be interpolated, favor single quotes.
 
-{{% highlight ruby %}}
+```ruby
 s = "strings"
 # Bad
 puts "Concatenated " + s + " example"
@@ -62,7 +62,7 @@ puts "Hello World"
 # Good
 puts "Concatenated #{s} example"
 puts 'Hello World'
-{{% /highlight %}}
+```
 
 
 ### Favor End of Line Modifiers
@@ -70,7 +70,7 @@ puts 'Hello World'
 - In cases of single line conditional statements, it is preferable to use an end of line modifier rather than a traditional check
 - Additionally, favor `unless` over negated `if` statements
 
-{{% highlight ruby %}}
+```ruby
 # Bad
 if !wine.corked?
     drink(wine)
@@ -78,7 +78,7 @@ end
 
 # Good
 drink(wine) unless wine.corked?
-{{% /highlight %}}
+```
 
 
 ### Utilize Method Qualifiers
@@ -86,17 +86,17 @@ drink(wine) unless wine.corked?
 - The `?` qualifier signals that the method returns a boolean value
 - The `!` qualifier signals that the method performs a dangerous (usually state changing) operation
 
-{{% highlight ruby %}}
+```ruby
 cellar.empty? # should return boolean value
 cellar.clear! # modifies the state of the cellar
-{{% /highlight %}}
+```
 
 
 ### Favor "Or Equal" Idiom over nil Checks
 
 - The `a ||= b` operator, which is syntactic sugar for `a || a = b`, is the idiomatic way to set a variable if it is not already set.
 
-{{% highlight ruby %}}
+```ruby
 # Bad
 if a.nil?
     a = b
@@ -107,7 +107,7 @@ a = b if a.nil?
 
 # Good
 a ||= b
-{{% /highlight %}}
+```
 
 
 ### Favor Block Yielding Methods
@@ -115,7 +115,7 @@ a ||= b
 - Instead of creating a class with cleanup methods that the user must call when done, yield a block that they can use, and perform the cleanup once their block finishes.
 - Likewise, when using classes, prefer block yielding functionality.
 
-{{% highlight ruby %}}
+```ruby
 # Bad
 begin
     file = File.open("/tmp/filename", "w")
@@ -128,14 +128,14 @@ end
 
 # Good
 File.open('/tmp/filename', 'w') {|file| file.write("some text")} # file handle closed once block exits
-{{% /highlight %}}
+```
 
 
 ### Prefer Hash for Optional Args
 
 - An optional hash paramater should be used to support optional arguments to functions. A hash is preferable to the default optional args syntax because it allows the arguments to be named, and unordered. Defaulting optional values can be achieved by merging with a defaults hash.
 
-{{% highlight ruby %}}
+```ruby
 # Bad
 def foo(required_param, opt_arg1 = 'default1', opt_arg2 = 'default2', opt_arg3 = 'default3')
     # ...
@@ -148,7 +148,7 @@ def foo(required_param, optional_params = {})
     :arg3 => 'default3'}.merge(optional_params)
     # ...
 end
-{{% /highlight %}}
+```
 
 
 ### Forgo Explicit Returns
@@ -156,7 +156,7 @@ end
 - All ruby functions return their last evaluated expression. Since all functions return something, ensure that what is returned is meaningful. Furthermore, given their implicit nature, it is redundant to explicitly return at the end of a function.
 - Returns may be used to bail out of a function early, but are otherwise unnecessary.
 
-{{% highlight ruby %}}
+```ruby
 # Bad
 def fib(n)
     return 1 if n < 2 # usage of return here is ok
@@ -167,7 +167,7 @@ end
 def fib(n)
     (0..n).inject([1,0]) { |(a,b), _| [b, a+b] }.first
 end
-{{% /highlight %}}
+```
 
 
 ### No Empty Parentheses
@@ -179,7 +179,7 @@ end
 
 - Single line blocks should use the bracket style, whereas blocks spanning multiple lines should use the do syntax
 
-{{% highlight ruby %}}
+```ruby
 # Bracket style block
 wines.map{|w| w.name}.sort
 
@@ -189,14 +189,14 @@ cellars.each do |cellar|
         wine.pour! if desired_wines.include?(wine)
     end
 end
-{{% /highlight %}}
+```
 
 
 ### And, Or vs &&, ||
 
 - `&&` and `||` are to be used for boolean expressions, whereas `and` and `or` are meant for control flow
 
-{{% highlight ruby %}}
+```ruby
 # boolean expression example
 if condition1 && condition2
     do_something
@@ -210,14 +210,14 @@ a = true && false
 #=> false (a == false) # the && operator takes precedence
 a = true and false
 #=> false (a == true) # the = operator takes precedence
-{{% /highlight %}}
+```
 
 
 ### Prefer Static Methods, and a Functional Approach
 
 - Static classes and methods are easier to invoke, and easier to test. Similarly, writing your code in a functional way will result in methods that are easier to reason about, and more likely to be correct.
 
-{{% highlight ruby %}}
+```ruby
 class Test
     # static method
     def self.method1
@@ -242,7 +242,7 @@ end
 
 # Good
 result = Hash[keys.zip(values)]
-{{% /highlight %}}
+```
 
 
 ### Prefer Self-documenting Code to Comments

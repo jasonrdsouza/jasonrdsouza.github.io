@@ -2,6 +2,7 @@
 date = 2012-05-28T21:13:58Z
 draft = false
 title = "Hello World"
+description = "I'm starting a blog..."
 +++
 
 
@@ -10,14 +11,13 @@ It's not that I don't have interests, I simply find it uninteresting to keep a l
 interests. Unfortunately, that makes me sound sort of boring, so I decided to start this blog. Here I will write about things that interest me:
 articles I read, skills I am learning, and sometimes, simply stream of consciousness.
 
-{{% highlight ruby %}}
+```python
 def print_greeting
-puts "Hello World"
-end
+    print("Hello World")
 
 print_greeting
 #=> "Hello World"
-{{% /highlight %}}
+```
 
 The blog is mainly for me, but I hope some of the posts will be useful
 and informative to others. I have a few topics in mind to write about, and plan to keep the posts

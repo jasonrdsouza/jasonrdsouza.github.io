@@ -2,6 +2,7 @@
 date = 2013-10-14T21:13:58Z
 draft = false
 title = "The Ruby Environment"
+description = "An introduction to the ruby environment, and the tools necessary to successfully interact with and work in its ecosystem."
 +++
 
 Already familiar with programming, and trying to pick up Ruby? Here's a quick intro to the environment.
@@ -34,9 +35,9 @@ Once you have Ruby installed, the best way to get a feel for it is to experiment
 The ruby standard library is already pretty full featured, but additional functionality can be acquired through the installation of prepackaged ruby programs and libraries called Gems. Gems are installed using the gem program which comes with ruby. In addition to libraries you can make use of in your code, lots of standalone programs written in ruby are distributed as gems. In fact, the preferred method of installing the aforementioned PRY is through gem.
 
 Installing a gem is done on the command line like so:
-{{% highlight bash %}}
+```bash
 gem install pry
-{{% /highlight %}}
+```
 
 
 ### Rails

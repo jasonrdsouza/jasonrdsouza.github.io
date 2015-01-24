@@ -2,6 +2,7 @@
 date = 2014-01-26T21:13:58Z
 draft = false
 title = "Introduction to Hadoop and Hive"
+description = "A basic introduction to what hadoop and hive are, and what they are used for in contrast with a more traditional relational storage system."
 +++
 
 
@@ -44,9 +45,9 @@ Most performance tuning in the relational model comes from judicious use of inde
 Hive Specific Optimizations
 ---------------------------
 
-Given that all HQL queries are converted to map-reduce jobs, there are a few hints you can pass to the HQL -> MR compiler to get extra performance out of a job. For instance, every map-reduce step requires that one table be stored in memory while the other is streamed through and the HQL logic is computed. It is more efficient to stream the larger of the two tables, and store the smaller one in memory. If you know which table is larger, you can set the “STREAMTABLE(table-name)” hint in your query, and the compiler will force that table to be streamed.
+Given that all HQL queries are converted to map-reduce jobs, there are a few hints you can pass to the HQL -> MR compiler to get extra performance out of a job. For instance, every map-reduce step requires that one table be stored in memory while the other is streamed through and the HQL logic is computed. It is more efficient to stream the larger of the two tables, and store the smaller one in memory. If you know which table is larger, you can set the `STREAMTABLE(table-name)` hint in your query, and the compiler will force that table to be streamed.
 
-Additionally, if all but one of the tables being joined on are small, you can indicate that with the “MAPJOIN(small-table-names)” hint, and the HQL logic will be done strictly in the mapper, eliminating the reduce step of your resultant map-reduce task altogether. More information about these optimizations can be found in the Hive documentation [here](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Joins).
+Additionally, if all but one of the tables being joined on are small, you can indicate that with the `MAPJOIN(small-table-names)` hint, and the HQL logic will be done strictly in the mapper, eliminating the reduce step of your resultant map-reduce task altogether. More information about these optimizations can be found in the Hive documentation [here](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Joins).
 
 
 Final Notes
