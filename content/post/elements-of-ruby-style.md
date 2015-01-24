@@ -2,7 +2,7 @@
 date = 2014-02-23T21:13:58Z
 draft = false
 title = "The Elements of (Ruby) Style"
-description = "A simple, but powerful set of rules to enhance the quality and readability of ruby code"
+description = "Simple, but powerful rules to enhance the quality of ruby code"
 +++
 
 
