@@ -2,11 +2,11 @@
 date = 2015-02-03T02:36:59Z
 draft = false
 title = "Sorting"
-description = "Sorting is a fundamental, yet often overlooked aspect of computer science due to its status as an effectively 'solved problem'. The state of the art sorting algorithms at the fingertips of most developers are the result of much research and experimentation. This blog post serves as a crash course on sorting basics, leading up to an understanding of the modern algorithms."
+description = "Sorting is a fundamental, yet often overlooked aspect of computer science due to its status as an effectively 'solved problem'. The state of the art sorting algorithms at the fingertips of most developers are the result of much research and experimentation. This post serves as a crash course on sorting basics, leading up to an understanding of the modern algorithms."
 +++
 
 Most programming languages have an
-[extremely efficient, optimized in nearly all cases](http://en.wikipedia.org/wiki/Timsort)
+[extremely efficient, optimized in nearly all cases](http://en.wikipedia.org/wiki/Timsort),
 built in sorting algorithm that’s a simple function call away.
 Practically, this removes the need to spend much time contemplating the
 implementation, efficiencies, and tradeoffs
@@ -26,8 +26,6 @@ The comparison sorting properties are codified in an [interface](http://golang.o
 
 ```go
 type ComparisonSortInterface interface {
-    // Len is the number of elements in the collection.
-    Len() int
     // Less reports whether the element with
     // index i should sort before the element with index j.
     Less(i, j int) bool
@@ -134,7 +132,7 @@ func InsertionSort(data sort.Interface, a, b int) {
 Efficiency is on par with the first 2 algorithms,
 with a best and worst case of `O(n^2)`.
 Note that this particular implementation is in-place,
-and lacks recursion, therefore using no additional memory.
+and eschews recursion, therefore using no additional memory.
 
 
 ### Merge Sort
@@ -217,10 +215,10 @@ but the space vs. time tradeoff is intrinsic.
 
 ![Quicksort Animation](/img/posts/quicksort.gif)
 
-Quicksort is one of the more widespread sorting algorithms,
-and was the default sorting approach in Unix, C, and Java initially.
+Quicksort is one of the most widespread sorting algorithms,
+and was the default sorting approach in Unix, C, and Java for some time.
 It has been replaced by fancier sorts with better real-world runtimes,
-but it typically works very well in practice.
+but remains very effective in practice.
 The idea behind its implementation is to choose a “pivot” element from the collection at random,
 and push everything less than the pivot to its left,
 and everything greater than the pivot to its right.
@@ -256,22 +254,22 @@ it is possible to construct an input such that the smallest (or largest) collect
 is used as a pivot on each recurrence of the algorithm.
 In such a case, quicksort effectively devolves into a selection sort.
 Barring that very rare situation,
-quicksort typically performs better than other `O(nlogn)` algorithms
+quicksort performs better than other `O(nlogn)` algorithms
 because of implementation details leading to
 better cache locality, and other, non-asymptotically relevant performance benefits.
 
 
 ### The Fancier Sorts
 
-The fancier sorts I have alluding to are
+The fancier sorts I have alluded to are
 [hybrid algorithms](http://en.wikipedia.org/wiki/Hybrid_algorithm)
 like [Timsort](http://en.wikipedia.org/wiki/Timsort)
 and [Introsort](http://en.wikipedia.org/wiki/Introsort).
 The general idea of this class of sorting algorithm is that asymptotic complexity, while important,
 is not the only factor determining the speed of a sorting algorithm in real world workflows.
-Different sorting algorithms are optimal in different scenarios,
+Different algorithms are optimal in different scenarios,
 and we can take advantage of that knowledge by choosing the most efficient operations
-given the relevant characteristics of the data.
+given relevant characteristics of the input data.
 For example, simple sorts like insertion sort perform better than more complex sorts when dealing with small datasets.
 As the data size grows, quicksort may become the best option.
 Once a certain call stack level is reached,
@@ -302,7 +300,7 @@ For example, imagine wanting to sort a large collection of people objects based 
 Typical intuition would say that the best option would have `O(nlogn)` asymptotic time complexity.
 If, however, it’s reasonable to assume that ages are restricted from 0 to 250 years,
 the sort can be accomplished in what is effectively `O(n)` time using a bucket sorting methodology.
-Specifically, create an `ageBuckets` array with a length of 250- a bucket for each year.
+Specifically, create an `ageBuckets` array with a length of 250 -- a bucket for each year.
 Then, iterate through the input collection,
 putting each person into the bucket corresponding to their age.
 
