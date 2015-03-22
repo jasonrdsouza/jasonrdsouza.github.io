@@ -2,6 +2,8 @@ baseurl = "http://www.jasondsouza.org"
 languageCode = "en-us"
 title = "Jason Dsouza"
 MetaDataFormat = "toml"
+theme = "hyde-x"
+paginate = 10
 
 [author]
     name = "Jason Dsouza"
