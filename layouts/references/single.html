@@ -2,7 +2,7 @@
 <div class="content container">
   <div class="post">
     <h1>{{ .Title }}</h1>
-    <span class="post-date">{{ .Description }} &middot; <span class="post-date">{{ .Date.Format "Jan 2, 2006" }} {{ if .Site.DisqusShortname }} &middot; <a href="{{ .Permalink }}#disqus_thread">Comments</a>{{ end }}
+    <span class="post-date">{{ .Description }} &mdash; {{ .Date.Format "Jan 2, 2006" }}
     {{ if isset .Params "categories" }}
     <br/>
     {{ $baseUrl := .Site.BaseUrl }}
