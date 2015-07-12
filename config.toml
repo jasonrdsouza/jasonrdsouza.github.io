@@ -24,8 +24,8 @@ paginate = 10
     tagline = "Engineer, Hacker, Sculptor"
 
     # Metadata used to drive integrations.
-    googleAuthorship = ""
-    googleAnalytics = ""
+    googleAuthorship = "+JasonDSouza0"
+    googleAnalytics = "UA-42645944-1"
     gravatarHash = "9a12ad5645a3517bbe0fe067985d13ad"
 
     # Sidebar social links, avoid enabling too many of these if possible.
