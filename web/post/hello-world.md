@@ -1,9 +1,10 @@
-+++
-date = 2012-05-28T21:13:58Z
-draft = false
-title = "Hello World"
-description = "I'm starting a blog..."
-+++
+---
+date: 2012-05-28T21:13:58Z
+draft: false
+template: post.mustache
+title: "Hello World"
+description: "I'm starting a blog..."
+---
 
 
 Sometimes people ask me what my interests are. Frequently, I have a hard time answering that question.

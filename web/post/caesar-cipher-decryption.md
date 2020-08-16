@@ -1,8 +1,9 @@
-+++
-date = "2015-07-11T22:22:32-04:00"
-title = "Caesar Cipher Decryption"
-description = "The ability to manipulate a computer to perform tedious tasks on your behalf is an incredibly valuable, and increasingly necessary skill to have. Lots of software engineering deals with large programs, and high level architectural challenges. This post explores the other side of programming... small, one-of scripts designed to solve a specific problem. I'll walk through how I solved a small cryptographic puzzle posed online, and try to explain the process of problem solving via code at a micro-level."
-+++
+---
+date: "2015-07-11T22:22:32-04:00"
+template: post.mustache
+title: "Caesar Cipher Decryption"
+description: "The ability to manipulate a computer to perform tedious tasks on your behalf is an incredibly valuable, and increasingly necessary skill to have. Lots of software engineering deals with large programs, and high level architectural challenges. This post explores the other side of programming... small, one-of scripts designed to solve a specific problem. I'll walk through how I solved a small cryptographic puzzle posed online, and try to explain the process of problem solving via code at a micro-level."
+---
 
 
 Recently, Google ran a [contest](https://plus.google.com/+GoogleforWork/posts/cftsomhu6H4)
@@ -19,7 +20,7 @@ and have it do most of the tedious work for you.
 
 As an example, take puzzle #3:
 
-![Google Security Key Challenge #3](/img/posts/google-security-key-challenge-3.png)
+![Google Security Key Challenge #3](/static/posts/google-security-key-challenge-3.png)
 
 Accompanying this puzzle is the hint "Caesar". At first, this text
 looks like gibberish, but we know it is in fact
@@ -50,7 +51,7 @@ the direction is Left (`D = <-`), causing the input letter `E`
 to be encrypted to the letter `B`. Notice also how the shifting
 "wraps around".
 
-![Caesar Cipher Example](/img/posts/caesar-cipher.png)
+![Caesar Cipher Example](/static/posts/caesar-cipher.png)
 
 This cipher seems like a pretty good candidate to decrypt our
 ciphertext. Now, we just have to figure out what `N` and `D` are! First,

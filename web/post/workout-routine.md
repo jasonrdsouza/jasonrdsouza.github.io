@@ -1,9 +1,10 @@
-+++
-date = 2012-09-05T21:13:58Z
-draft = false
-title = "Workout Routine"
-description = "This is the workout routine I used to get in the best shape of my life. It doesn't include the diet or cardio training portion, which I may create as separate posts."
-+++
+---
+date: 2012-09-05T21:13:58Z
+template: post.mustache
+draft: false
+title: "Workout Routine"
+description: "This is the workout routine I used to get in the best shape of my life. It doesn't include the diet or cardio training portion, which I may create as separate posts."
+---
 
 
 This workout should be done for 3 consecutive days, followed by 1 day of rest.
@@ -17,7 +18,7 @@ Then, for the fourth set repeat what you did for the second set, and for the fif
 did for the first set.
 
 
-### Example
+## Example
 
 Pyramid Set of Incline Bench Press. In this case, W = 135, delta = 10.
 
@@ -28,7 +29,7 @@ Pyramid Set of Incline Bench Press. In this case, W = 135, delta = 10.
 - Set #5 (12 Reps @ 135 lbs)
 
 
-### Day 1 (Chest, Triceps, Shoulders)
+## Day 1 (Chest, Triceps, Shoulders)
 
 - Bench Press (pyramid set for each of the sub-bullet points)
     - Regular
@@ -56,7 +57,7 @@ Pyramid Set of Incline Bench Press. In this case, W = 135, delta = 10.
     - Flex and hold for at least 10 seconds
 
 
-### Day 2 (Back, Biceps, Forearms)
+## Day 2 (Back, Biceps, Forearms)
 
 - Lat Pulldown (pyramid set)
 - Seated Row (pyramid set)
@@ -72,7 +73,7 @@ Pyramid Set of Incline Bench Press. In this case, W = 135, delta = 10.
 - Flex
 
 
-### Day 3 (Legs, Abs)
+## Day 3 (Legs, Abs)
 
 - Squats (pyramid set)
     - make this one a 7 step pyramid instead of 5
@@ -94,7 +95,7 @@ Pyramid Set of Incline Bench Press. In this case, W = 135, delta = 10.
 - Flex
 
 
-### Reminders
+## Reminders
 
 - Don't take too much rest in-between sets. The whole workout should take around 1.5 hours
 - Hydrate. Drink water after every few sets

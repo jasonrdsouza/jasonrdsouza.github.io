@@ -1,9 +1,9 @@
-+++
-date = 2015-02-03T02:36:59Z
-draft = false
-title = "Sorting"
-description = "Sorting is a fundamental, yet often overlooked aspect of computer science due to its status as an effectively 'solved problem'. The state of the art sorting algorithms at the fingertips of most developers are the result of much research and experimentation. This post serves as a crash course on sorting basics, leading up to an understanding of the modern algorithms."
-+++
+---
+date: 2015-02-03T02:36:59Z
+template: post.mustache
+title: "Sorting"
+description: "Sorting is a fundamental, yet often overlooked aspect of computer science due to its status as an effectively 'solved problem'. The state of the art sorting algorithms at the fingertips of most developers are the result of much research and experimentation. This post serves as a crash course on sorting basics, leading up to an understanding of the modern algorithms."
+---
 
 Most programming languages have an
 [extremely efficient, optimized in nearly all cases](http://en.wikipedia.org/wiki/Timsort),
@@ -78,7 +78,7 @@ and I like the elegance of the recursion more than an extra loop, so I left it a
 
 ### Bubble Sort
 
-![Bubble Sort Animation](/img/posts/bubblesort.gif)
+![Bubble Sort Animation](/static/posts/bubblesort.gif)
 
 This is another basic sorting algorithm.
 The idea is to *bubble* larger elements towards the end of the list,
@@ -111,7 +111,7 @@ it finishes in `O(n)` time.
 
 ### Insertion Sort
 
-![Insertion Sort Animation](/img/posts/insertion-sort.gif)
+![Insertion Sort Animation](/static/posts/insertion-sort.gif)
 
 Insertion sort works by going through the collection,
 and *inserting* each element into a sorted version of the collection,
@@ -137,7 +137,7 @@ and eschews recursion, therefore using no additional memory.
 
 ### Merge Sort
 
-![Merge Sort Animation](/img/posts/merge-sort.gif)
+![Merge Sort Animation](/static/posts/merge-sort.gif)
 
 While the first 3 sorts were fairly simple and straightforward,
 this one is more complex.
@@ -213,7 +213,7 @@ but the space vs. time tradeoff is intrinsic.
 
 ### Quicksort
 
-![Quicksort Animation](/img/posts/quicksort.gif)
+![Quicksort Animation](/static/posts/quicksort.gif)
 
 Quicksort is one of the most widespread sorting algorithms,
 and was the default sorting approach in Unix, C, and Java for some time.
@@ -278,7 +278,7 @@ it may make sense to switch again to something like merge sort, and so on.
 A perspicuous example of hybrid sorting algorithms in practice
 is the [default sort in Go](http://golang.org/src/sort/sort.go).
 For a fascinating historical perspective,
-[here’s the inventor of Timsort, Tim Peters’ original paper describing his sort implementation](http://svn.python.org/projects/python/trunk/Objects/listsort.txt),
+[here's the inventor of Timsort, Tim Peters' original paper describing his sort implementation](http://svn.python.org/projects/python/trunk/Objects/listsort.txt),
 which went on to be the standard sorting algorithm in Python, Java, and many other standard libraries.
 
 

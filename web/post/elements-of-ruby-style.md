@@ -1,9 +1,10 @@
-+++
-date = 2014-02-23T21:13:58Z
-draft = false
-title = "The Elements of (Ruby) Style"
-description = "Simple, but powerful rules to enhance the quality of ruby code"
-+++
+---
+date: 2014-02-23T21:13:58Z
+draft: false
+template: post.mustache
+title: "The Elements of (Ruby) Style"
+description: "Simple, but powerful rules to enhance the quality of ruby code"
+---
 
 
 I’ve been working with Ruby a lot lately, and have come to enjoy the expressive succinctness of the language. It is credited as a language that strives to make programming enjoyable, and minimize the amount of work the programmer must do. To accomplish those goals, Ruby allows the flexibility to do things in many different ways. This approach, in contrast with the “[one right and obvious way](http://python.org/doc/humor/#the-zen-of-python)” mentality, allows the programmer to use a style suited to their way of approaching the problem at hand. The resulting syntactic flexibility is a double edged sword, however, and can lead to concise and beautiful code in the right hands, or utterly incomprehensible code in the wrong ones.
@@ -11,8 +12,7 @@ I’ve been working with Ruby a lot lately, and have come to enjoy the expressiv
 In that regard, Ruby seems quite similar to English. Both are complex, multifaceted languages, which take time to perfect, and must be studied before they can be applied effectively. One of the seminal works regarding English writing style is a book by William Strunk Jr. and E. B. White called “[The Elements of Style](http://en.wikipedia.org/wiki/The_Elements_of_Style)”. Instead of a comprehensive guide, the short book presents a few powerful rules that greatly enhance the quality of most writing.  This post is my attempt at creating a similar style guide for Ruby. For a more wholistic Ruby style guide, see: [https://github.com/bbatsov/ruby-style-guide](https://github.com/bbatsov/ruby-style-guide).
 
 
-Elements
---------
+## Elements
 
 ### Create Importable Scripts
 
@@ -255,8 +255,7 @@ result = Hash[keys.zip(values)]
 - It is best to keep methods small and simple. Refactoring large functions into a collection of smaller, appropriately named ones will enhance readability and maintainability.
 
 
-Summary
--------
+## Summary
 
 Quality Ruby code should be simple, readable, and [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself). The rules above are solid guidelines that will lead to better code if followed properly. That being said, as with any set of rules, there are always exceptions, so be judicious in their application. As Ralph Waldo Emerson once said,
 

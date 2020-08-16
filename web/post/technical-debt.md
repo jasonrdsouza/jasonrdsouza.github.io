@@ -1,19 +1,20 @@
-+++
-date = 2013-10-19T21:13:58Z
-draft = false
-title = "On Technical Debt"
-description = "Technical debt is not universally bad, in the same way that regular debt is not universally bad. This post is a summary of my thoughts on how to think about and deal with technical debt in an intelligent manner."
-+++
+---
+date: 2013-10-19T21:13:58Z
+template: post.mustache
+draft: false
+title: "On Technical Debt"
+description: "Technical debt is not universally bad, in the same way that regular debt is not universally bad. This post is a summary of my thoughts on how to think about and deal with technical debt in an intelligent manner."
+---
 
 
 Technical debt as a software development concept is important to fully understand and quantify. In practice, however, many developers only understand it at a very high level. It is certainly stressed in school and the workplace that clean design is important, and most people have a notion of debt being a bad thing, but fundamentally, it is not that simple. Just as businesses take on debt strategically, so to should programmers.
 
-### Definition
+## Definition
 
 The term "technical debt" was first coined by [Ward Cunningham](http://en.wikipedia.org/wiki/Ward_Cunningham) to describe the future time investment that software developers take on to enable quicker immediate results. Essentially, he was describing taking shortcuts in the short term writing of software to produce results quickly, at the expense of longer development time in the future. In a software setting, debt equates to time, similar to how debt equates to money in finance. There are two general types of technical debt: unintentional debt and deliberate debt. Unintentional debt is typically due to lack of experience, and can mostly be mitigated through code reviews, pair programming with a more senior developer, and the general oversight of experienced software engineers. Intentional debt is the purposeful accumulation of debt in order to achieve a goal (speed of delivery, meeting a deadline, etc.). This is the interesting type, and the one I want to focus on.
 
 
-### Intentional Debt
+## Intentional Debt
 
 Intentional technical debt, as [Steve McConnell](http://www.stevemcconnell.com/) puts it, is
 
@@ -46,6 +47,6 @@ An example of a situation where taking on technical debt may make sense is an im
 > Pay off technical debt as soon as possible. It would be imprudent to do otherwise."
 
 
-### Borrowing Intelligently
+## Borrowing Intelligently
 
 The main thing to keep in mind is that developing software comes with unexpected problems and constraints, and sometimes it is necessary to "get it done" at the expense of "doing it right". Without a proper understanding of technical debt, these situations can compound and [rot](http://en.wikipedia.org/wiki/Software_rot) your project from the inside out. Then, when it finally gets too bad to further put off, the investment necessary to pay off the accumulated debt is far greater than anticipated or acceptable. Understanding when it makes sense to take on debt, and when it is necessary to bite the bullet and invest the extra time up front is an important trait of any skilled software engineer. When adding debt does make sense, tracking it and ensuring it is paid back as soon as possible is crucial. Anything less is gambling with productivity.

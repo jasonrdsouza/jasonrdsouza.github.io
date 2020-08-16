@@ -17,9 +17,12 @@ void main() {
 
 ### Transclusion
 And this snippet is transcluded from a file:
+
+*Note that transclusion directly from a post uses different path semantics than a regular reference. This is because the post transclusion happens as part of the static site generation pipeline, before the rest of the assets have been moved to their final places. (The other references are used by the browser, post-site gen). Practically this means that you must use the `web/static/...` relative path instead of the `/static/...` path that we use elsewhere*
+
 <pre>
 <code class="language-html">
-{{> static/googlef7b46688e3c22ec7.html}}
+{{> web/static/googlef7b46688e3c22ec7.html}}
 </code>
 </pre>
 
