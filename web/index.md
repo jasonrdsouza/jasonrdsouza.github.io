@@ -3,6 +3,6 @@ title: "Homepage"
 template: index.mustache
 ---
 
-Sample homepage written in markdown.
+Site under construction...
 
 - [A test post](post/testpost.html)
