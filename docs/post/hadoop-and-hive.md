@@ -1,0 +1,52 @@
+---
+date: 2014-01-26T21:13:58Z
+draft: false
+template: post.mustache
+title: "Introduction to Hadoop and Hive"
+description: "A basic introduction to what hadoop and hive are, and what they are used for in contrast with a more traditional relational storage system."
+---
+
+
+The ability to extract meaningful and actionable information from data is a skill of growing importance. Many of today’s largest tech companies are built upon that skill. Knowing _what_ questions to ask has always been the interesting part, but as the volume of data has gotten “[bigger](http://en.wikipedia.org/wiki/Big_data)”, knowing _how_ to ask those questions has become increasingly relevant.
+
+[SQL](http://en.wikipedia.org/wiki/SQL) is the lingua franca for data wrangling. But, the power of SQL derives from the fact that it manages data in a [relational model](http://en.wikipedia.org/wiki/Relational_model). Unfortunately, for sufficiently large amounts of data, such a model is difficult to maintain. Furthermore, with a large enough "data firehose”, it isn’t feasible to identify, sanitize, and pump all the data into a relational database in a timely manner, let alone get it back out. To combat these problems, Google invented the [map-reduce](http://research.google.com/archive/mapreduce.html) paradigm, and Yahoo later open sourced a framework implementation of it called [Hadoop](http://en.wikipedia.org/wiki/Apache_Hadoop).
+
+
+## Hadoop
+
+Hadoop is simply a system which enables users to perform map-reduce operations across a cluster of computers. It abstracts away the tedium of coordinating the cluster to perform separate segments of useful work. Instead, you treat Hadoop as one logical computer. There is one filesystem into which you put data, and one system on which you run map-reduce jobs to process that data. Hadoop takes care of storing the data redundantly across its cluster, and parallelizing your jobs amongst the cluster nodes.
+
+This solution works well for batch offline processing of enormous datasets in an [ETL](http://en.wikipedia.org/wiki/Extract,_transform,_load) fashion. It does require writing java map-reduce programs which are verbose, boiler-plate laden, and sometimes lacking in clarity, however. To combat this, and enable the wider audience familiar with SQL to enjoy the benefits of scale Hadoop offers, Facebook invented Hive.
+
+
+## Hive
+
+[Hive](http://hive.apache.org/) provides a SQL dialect called HiveQL which essentially allows one to write SQL queries that get translated into the aforementioned map-reduce jobs. Since it is simply a layer on top of Hadoop, the underlying “tables” it uses are really just folders of files in the Hadoop file system (HDFS). As such, it coexists nicely with native Hadoop map-reduce jobs. Hive's (and more generally speaking SQL’s) expressiveness allows for elegantly expressed queries which would otherwise require cumbersome low level java map-reduce implementations. It also opens up large scale data analytics to less technical analysts who may not know how to program, but are familiar with SQL. In fact, writing native map-reduce jobs has been called the “[assembly](http://en.wikipedia.org/wiki/Assembly_language) of big data”.
+
+All these benefits come with some baggage however. Real SQL in the relational database sense is based upon [relational algebra](http://en.wikipedia.org/wiki/Relational_algebra) and [set theory](http://en.wikipedia.org/wiki/Set_theory). This strong theoretical background, along with decades of research means that most relational database queries are extensively optimized. Hive, in contrast, is much younger. Additionally, many potential optimizations are lost in the translation to a map-reduce job. The result is that even simple Hive queries, which would take seconds in traditional [RDBMS](http://en.wikipedia.org/wiki/Relational_database_management_system) take minutes in Hive. On the other hand, a query over terabytes of data that simply wouldn’t be possible in the relational DB world barely makes Hive sweat.
+
+
+## SQL vs HQL
+
+Due to the difference in implementation between SQL and HQL, there are a few performance considerations to keep in mind when writing Hive jobs.
+
+### Joins are Expensive
+Unlike in SQL, joins in Hive are very expensive. This is partially because of limited index support in Hive, but is also a by-product of the fact that every join in a query requires an additional map-reduce job to complete. In the relational world, redundancy is limited through the process of [normalization](http://en.wikipedia.org/wiki/Database_normalization), and joins are used to pull relevant data. In Hive, where space is abundant, denormalization is frequently the preferred method of information storage.
+
+### Subselects are Good
+While subselects in SQL are generally avoided, Hive encourages their use. Because of Hive’s relatively unintelligent query execution planner, and the size of data typically involved in HQL queries, limiting the amount of data to be churned through in a query as early as possible is preferable. Therefore, if a subselect can cut out a substantial amount of the input data before the rest of the query has to be done, a significant amount of processing can be avoided.
+
+### Data Distribution Techniques
+Most performance tuning in the relational model comes from judicious use of indexes. In Hive, reading from a table typically requires the equivalent of a full table scan because the tables are really just files in HDFS. The Hive “big data” equivalent of indexing is to use partitioning and bucketing. Both of these concepts refer to splitting the stored data into logical files. For example, it is common to partition a Hive table based on date. Then, queries run on specific date ranges will only read the HDFS files (partitions) for the dates in question. Bucketing is a similar concept where the “bucketed” field is hashed to determine which file to store that row in. With both of these techniques, it is important to keep the distribution of data in mind. If some of the files are significantly larger than others, you lose most of the benefit of splitting it up.
+
+
+## Hive Specific Optimizations
+
+Given that all HQL queries are converted to map-reduce jobs, there are a few hints you can pass to the HQL -> MR compiler to get extra performance out of a job. For instance, every map-reduce step requires that one table be stored in memory while the other is streamed through and the HQL logic is computed. It is more efficient to stream the larger of the two tables, and store the smaller one in memory. If you know which table is larger, you can set the `STREAMTABLE(table-name)` hint in your query, and the compiler will force that table to be streamed.
+
+Additionally, if all but one of the tables being joined on are small, you can indicate that with the `MAPJOIN(small-table-names)` hint, and the HQL logic will be done strictly in the mapper, eliminating the reduce step of your resultant map-reduce task altogether. More information about these optimizations can be found in the Hive documentation [here](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Joins).
+
+
+## Final Notes
+
+The Hadoop + Hive infrastructure is an effective way to process large quantities of data in a parallelized, distributed fashion, and provides a compelling answer to the _how_ of big data analytics. It is not a one-size fits all solution, and should be avoided in cases where a more traditional SQL solution will suffice, but is a powerful and necessary tool to have at your disposal. I touch on what I consider the fundamentals here, but there is an entire ecosystem built on top of Hadoop. Tools like [Pig](https://pig.apache.org/), [Cascading](http://www.cascading.org/), [Scalding](https://github.com/twitter/scalding), [Hbase](http://hbase.apache.org/), and [Spark](http://spark.incubator.apache.org/) are tailored to specific use cases, and can be composed into a flexible and scalable [data warehousing](http://en.wikipedia.org/wiki/Data_warehouse) solution.
