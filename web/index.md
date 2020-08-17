@@ -3,6 +3,6 @@ title: "Homepage"
 template: index.mustache
 ---
 
-Site under construction...
+Site under construction... old links should still work
 
-- [A test post](post/testpost.html)
+- [A test post](post/testpost)
