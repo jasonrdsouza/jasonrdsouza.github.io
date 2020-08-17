@@ -7,18 +7,18 @@ description: "Sorting is a fundamental, yet often overlooked aspect of computer 
 
 Most programming languages have an
 [extremely efficient, optimized in nearly all cases](http://en.wikipedia.org/wiki/Timsort),
-built in sorting algorithm that’s a simple function call away.
+built in sorting algorithm that's a simple function call away.
 Practically, this removes the need to spend much time contemplating the
 implementation, efficiencies, and tradeoffs
 behind the many existing ways to sort,
-and instead focus on the "actual problem”.
+and instead focus on the "actual problem".
 Nonetheless, it is informative to walk through the basics of sorting
 in order to gain a more comprehensive understanding of the current state of the art algorithms.
 
 Before diving into specifics, there are 3 things to note about sorting in general.
 
 1. All general purpose sorting algorithms fall into the category of [comparison sorts](http://en.wikipedia.org/wiki/Comparison_sort), meaning that they depend solely on the ability to compare any two elements and determine which one should come first in the sorted result, and the ability to rearrange elements.
-2. Sorting algorithms can either use additional buffer space to do their work, or perform the sort “in place”. In place sorts use constant (or occasionally logarithmic) additional storage space, as opposed to `O(n)` or more additional memory via a working buffer for regular implementations.
+2. Sorting algorithms can either use additional buffer space to do their work, or perform the sort "in place". In place sorts use constant (or occasionally logarithmic) additional storage space, as opposed to `O(n)` or more additional memory via a working buffer for regular implementations.
 3. All **comparison** based sorting algorithms require at least [linearithmic](http://en.wikipedia.org/wiki/Time_complexity#Linearithmic_time) asymptotic running time.
 
 
@@ -39,7 +39,7 @@ All the comparison based sorting implementations below will depend solely on tha
 
 ### Selection Sort
 
-Upon learning of the “sorting problem”,
+Upon learning of the "sorting problem",
 this is the algorithm that many students initially devise.
 Essentially, the idea is to *select* the smallest element,
 and move it to the front of the input collection.
@@ -201,7 +201,7 @@ making it asymptotically optimal.
 A regular implementation uses `O(n)` additional space to perform the sort.
 An in-place implementation, like the one above, reduces that to `O(logn)` additional space,
 with the tradeoff of increased running time due to additional swaps
-(since it doesn’t use an extra buffer, the reordering of elements is not as simple or efficient).
+(since it doesn't use an extra buffer, the reordering of elements is not as simple or efficient).
 
 The in-place merge function implemented above is simple, but fairly naive.
 As a result, it has the potential to degrade the runtime performance significantly
@@ -219,7 +219,7 @@ Quicksort is one of the most widespread sorting algorithms,
 and was the default sorting approach in Unix, C, and Java for some time.
 It has been replaced by fancier sorts with better real-world runtimes,
 but remains very effective in practice.
-The idea behind its implementation is to choose a “pivot” element from the collection at random,
+The idea behind its implementation is to choose a "pivot" element from the collection at random,
 and push everything less than the pivot to its left,
 and everything greater than the pivot to its right.
 Then, simply recurse on the left and right sub-collections
@@ -249,7 +249,7 @@ Quicksort's performance characteristics are interesting in the sense that
 it has a worst case asymptotic runtime of `O(n^2)`,
 but in practice (on average),
 it operates in `O(nlogn)` time.
-It’s worst case runtime comes from the fact that
+It's worst case runtime comes from the fact that
 it is possible to construct an input such that the smallest (or largest) collection element
 is used as a pivot on each recurrence of the algorithm.
 In such a case, quicksort effectively devolves into a selection sort.
@@ -292,13 +292,13 @@ Additionally, non-comparative sorts have the potential to achieve better optimal
 A common type of non-comparative sort is [Radix Sort](http://en.wikipedia.org/wiki/Radix_sort).
 Loosely, this sorting algorithm works by making a single pass through the input collection,
 and putting its elements into pre-ordered buckets.
-The reason this technique doesn’t work on arbitrary input is that the buckets must be created before running the sort,
+The reason this technique doesn't work on arbitrary input is that the buckets must be created before running the sort,
 and so the input data must be restricted in some way such that it is known *a priori* how many buckets to create.
 
 In spite of this restriction, these sorts are useful in many situations.
 For example, imagine wanting to sort a large collection of people objects based on their age (in years).
 Typical intuition would say that the best option would have `O(nlogn)` asymptotic time complexity.
-If, however, it’s reasonable to assume that ages are restricted from 0 to 250 years,
+If, however, it's reasonable to assume that ages are restricted from 0 to 250 years,
 the sort can be accomplished in what is effectively `O(n)` time using a bucket sorting methodology.
 Specifically, create an `ageBuckets` array with a length of 250 -- a bucket for each year.
 Then, iterate through the input collection,
@@ -310,7 +310,7 @@ Technically, because we are examining the *value* of each element,
 the real running time is `O(kn)`, where `k` is the size (length of the representation) of the values,
 and for arbitrarily large values, `k` can grow to be of `log(n)` size,
 so it can be argued that the real asymptotic complexity of a bucketing sort is still `O(nlogn)`,
-but we’ll leave that particular exploration for another post.
+but we'll leave that particular exploration for another post.
 
 For most cases where it is practical,
 a bucketing sort is a nice speed win,
