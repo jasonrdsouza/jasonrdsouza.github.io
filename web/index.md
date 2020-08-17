@@ -1,5 +1,5 @@
 ---
-title: "Homepage"
+title: "homepage"
 template: index.mustache
 ---
 
