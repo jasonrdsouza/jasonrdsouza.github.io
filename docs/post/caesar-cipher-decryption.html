@@ -1,21 +1,19 @@
 <html>
 <head>
-    <title>Caesar Cipher Decryption</title>
-    <link rel="icon" type="image/ico" href="/static/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/css/base.css">
-    <link rel="stylesheet" type="text/css" href="/css/prism.css">
-    <script src="/js/prism.js"></script>
-    <script src="/scripts/base.dart.js"></script>
+  <title>Caesar Cipher Decryption</title>
+  <link rel="icon" type="image/ico" href="/static/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/fonts.css">
+  <link rel="stylesheet" type="text/css" href="/css/prism.css">
+  <script src="/js/prism.js"></script>
+  <script src="/scripts/base.dart.js"></script>
 </head>
 <body>
 
 <h1>Caesar Cipher Decryption</h1>
 
-<div>
-  Tags:
-</div>
-
-<p>Recently, Google ran a <a href="https://plus.google.com/+GoogleforWork/posts/cftsomhu6H4">contest</a>
+<main>
+  <p>Recently, Google ran a <a href="https://plus.google.com/+GoogleforWork/posts/cftsomhu6H4">contest</a>
 to promote their new <a href="http://googleonlinesecurity.blogspot.com/2014/10/strengthening-2-step-verification-with.html">Security Key</a>.
 The contest had 5 parts, each of which was a simple <a href="https://en.wikipedia.org/wiki/Cryptography">cryptography</a>
 challenge. They provided an encrypted message, and the first
@@ -76,7 +74,7 @@ since there exists a correct value for <code>N</code> regardless of the
 value of <code>D</code>! Furthermore, since we are dealing with the
 <a href="https://en.wikipedia.org/wiki/English_alphabet">english alphabet</a> for
 this particular puzzle, we know that there are only 26 possible
-values for <code>N</code>. This is called the [key space](<a href="https://en.wikipedia.org/wiki/Key_space_(cryptography)">https://en.wikipedia.org/wiki/Key_space_(cryptography)</a>,
+values for <code>N</code>. This is called the <a href="https://en.wikipedia.org/wiki/Key_space_(cryptography)">key space</a>,
 and all we have to do is try each key before 100 other people do,
 to find the answer and win a prize! Unfortunately, doing that
 manually is rather tedious. Now that we know how to solve the
@@ -85,7 +83,7 @@ the boring part.</p>
 <h3 id="scripting-and-decrypting">Scripting and Decrypting</h3>
 <p>My current scripting language of choice is
 <a href="https://www.python.org/">Python</a>, so I'll use that, but
-the general concepts are the same regardless of language choice.</p>
+the general concepts are the same regardless of language.</p>
 <p>Lets start with the alphabet:</p>
 <pre><code class="language-python">ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 </code></pre>
@@ -117,7 +115,7 @@ def decrypt(cipher, ciphertext):
 aka trying every possible combination. This is the same approach
 we were going to take if we did it manually, but it makes sense
 now because of how small this cipher's
-[key space](<a href="https://en.wikipedia.org/wiki/Key_space_(cryptography)">https://en.wikipedia.org/wiki/Key_space_(cryptography)</a>
+<a href="https://en.wikipedia.org/wiki/Key_space_(cryptography)">key space</a>
 is relative to the speed of our computer. (Remember that the key
 space in this case is the amount of possible values for <code>N</code>,
 which we determined earlier was 26).</p>
@@ -172,6 +170,7 @@ trivial, but the underlying techniques are useful nonetheless.</p>
 <p>The source code to accompany this post can be found in its entirety
 <a href="https://gist.github.com/jasonrdsouza/a3f2657822f98ef48587">here</a>.</p>
 
+</main>
 
 </body>
 </html>

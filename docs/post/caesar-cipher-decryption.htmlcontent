@@ -59,7 +59,7 @@ since there exists a correct value for <code>N</code> regardless of the
 value of <code>D</code>! Furthermore, since we are dealing with the
 <a href="https://en.wikipedia.org/wiki/English_alphabet">english alphabet</a> for
 this particular puzzle, we know that there are only 26 possible
-values for <code>N</code>. This is called the [key space](<a href="https://en.wikipedia.org/wiki/Key_space_(cryptography)">https://en.wikipedia.org/wiki/Key_space_(cryptography)</a>,
+values for <code>N</code>. This is called the <a href="https://en.wikipedia.org/wiki/Key_space_(cryptography)">key space</a>,
 and all we have to do is try each key before 100 other people do,
 to find the answer and win a prize! Unfortunately, doing that
 manually is rather tedious. Now that we know how to solve the
@@ -68,7 +68,7 @@ the boring part.</p>
 <h3 id="scripting-and-decrypting">Scripting and Decrypting</h3>
 <p>My current scripting language of choice is
 <a href="https://www.python.org/">Python</a>, so I'll use that, but
-the general concepts are the same regardless of language choice.</p>
+the general concepts are the same regardless of language.</p>
 <p>Lets start with the alphabet:</p>
 <pre><code class="language-python">ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 </code></pre>
@@ -100,7 +100,7 @@ def decrypt(cipher, ciphertext):
 aka trying every possible combination. This is the same approach
 we were going to take if we did it manually, but it makes sense
 now because of how small this cipher's
-[key space](<a href="https://en.wikipedia.org/wiki/Key_space_(cryptography)">https://en.wikipedia.org/wiki/Key_space_(cryptography)</a>
+<a href="https://en.wikipedia.org/wiki/Key_space_(cryptography)">key space</a>
 is relative to the speed of our computer. (Remember that the key
 space in this case is the amount of possible values for <code>N</code>,
 which we determined earlier was 26).</p>

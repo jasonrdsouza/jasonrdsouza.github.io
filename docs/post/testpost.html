@@ -1,43 +1,61 @@
 <html>
 <head>
-    <title>Test Post</title>
-    <link rel="icon" type="image/ico" href="/static/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/css/base.css">
-    <link rel="stylesheet" type="text/css" href="/css/prism.css">
-    <script src="/js/prism.js"></script>
-    <script src="/scripts/base.dart.js"></script>
+  <title>Test Post</title>
+  <link rel="icon" type="image/ico" href="/static/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/fonts.css">
+  <link rel="stylesheet" type="text/css" href="/css/prism.css">
+  <script src="/js/prism.js"></script>
+  <script src="/scripts/base.dart.js"></script>
 </head>
 <body>
 
 <h1>Test Post</h1>
 
-<div>
-  Tags:
-    | <i>code</i> |
-    | <i>dartlang</i> |
-</div>
-
-<p>This is an example post to ensure stuff works for the actual posts.</p>
-<h3 id="snippet">Snippet</h3>
+<main>
+  <p>This is an example post to ensure stuff works for the actual posts.</p>
+<h2 id="text-formatting">Text Formatting</h2>
+<p>This is an example with a <a href="www.google.com">link</a>, and another link to <a href="http://www.jasondsouza.org">www.jasondsouza.org</a>. To ensure proper link styling. Also, here's some <em>italicized text</em> as well as some <strong>bold text</strong>.</p>
+<p>The following is a quote:</p>
+<blockquote>
+<p>There are these two young fish swimming along and they happen to meet an older fish swimming the other way, who nods at them and says "Morning, boys. How's the water?" And the two young fish swim on for a bit, and then eventually one of them looks over at the other and goes "What the hell is water?" - David Foster Wallace</p>
+</blockquote>
+<p>Then, this is a list with a few elements in it:</p>
+<ul>
+<li>Element 1</li>
+<li>Element 2</li>
+<li>Element 3
+<ul>
+<li>Subelement A</li>
+<li>Subelement B</li>
+</ul>
+</li>
+<li>Element 4</li>
+</ul>
+<h2 id="sidenotes">Sidenotes</h2>
+<p>Along with the main written body of text, my site styling has support for sidenotes.
+<span class="mgnote">Which automatically show up as parenthesized text on small screens</span></p>
+<h2 id="snippet">Snippet</h2>
 <p>This snippet is directly embedded within the markdown</p>
 <pre><code class="language-dart">void main() {
   print('hello world');
 }
 </code></pre>
-<h3 id="transclusion">Transclusion</h3>
+<h2 id="transclusion">Transclusion</h2>
 <p>And this snippet is transcluded from a file:</p>
 <p><em>Note that transclusion directly from a post uses different path semantics than a regular reference. This is because the post transclusion happens as part of the static site generation pipeline, before the rest of the assets have been moved to their final places. (The other references are used by the browser, post-site gen). Practically this means that you must use the <code>web/static/...</code> relative path instead of the <code>/static/...</code> path that we use elsewhere</em></p><pre>
 <code class="language-html">
 google-site-verification: googlef7b46688e3c22ec7.html</code>
 </pre>
-<h3 id="client-side-logic">Client Side Logic</h3>
+<h2 id="client-side-logic">Client Side Logic</h2>
 <p>Custom frontend logic to manipulate post:</p><pre><code id="sample"></code></pre>
 <p>The element above is populated via dart running on the client.</p><script src="/scripts/samplePopulate.dart.js"></script>
-<h3 id="pictures">Pictures</h3>
+<h2 id="pictures">Pictures</h2>
 <p>This is a sample section with a picture embedded in it.</p>
 <p><img src="/static/dartboard.jpg" alt="" /></p>
 <p>And more text below the image! With embedded tag variable content.</p>
 
+</main>
 
 </body>
 </html>

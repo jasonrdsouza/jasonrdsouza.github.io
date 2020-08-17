@@ -76,7 +76,7 @@ since there exists a correct value for `N` regardless of the
 value of `D`! Furthermore, since we are dealing with the
 [english alphabet](https://en.wikipedia.org/wiki/English_alphabet) for
 this particular puzzle, we know that there are only 26 possible
-values for `N`. This is called the [key space](https://en.wikipedia.org/wiki/Key_space_(cryptography),
+values for `N`. This is called the [key space](https://en.wikipedia.org/wiki/Key_space_(cryptography)),
 and all we have to do is try each key before 100 other people do,
 to find the answer and win a prize! Unfortunately, doing that
 manually is rather tedious. Now that we know how to solve the
@@ -87,7 +87,7 @@ the boring part.
 
 My current scripting language of choice is
 [Python](https://www.python.org/), so I'll use that, but
-the general concepts are the same regardless of language choice.
+the general concepts are the same regardless of language.
 
 Lets start with the alphabet:
 
@@ -129,7 +129,7 @@ With those pieces in place, lets try to crack the code with
 aka trying every possible combination. This is the same approach
 we were going to take if we did it manually, but it makes sense
 now because of how small this cipher's
-[key space](https://en.wikipedia.org/wiki/Key_space_(cryptography)
+[key space](https://en.wikipedia.org/wiki/Key_space_(cryptography))
 is relative to the speed of our computer. (Remember that the key
 space in this case is the amount of possible values for `N`,
 which we determined earlier was 26).
