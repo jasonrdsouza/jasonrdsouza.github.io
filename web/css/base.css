@@ -167,6 +167,9 @@ div > code, li code, p code {
   }
   pre {
     background-color: #404040;
-    box-shadow: 1px 1px 1px #181818;
+    box-shadow: none;
+  }
+  img {
+    box-shadow: none;
   }
 }
