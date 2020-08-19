@@ -159,3 +159,14 @@ div > code, li code, p code {
   font-weight: 500;
   font-size: 0.76em;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+      color: #CCCCCC;
+      background-color: #121212;
+  }
+  pre {
+    background-color: #404040;
+    box-shadow: 1px 1px 1px #181818;
+  }
+}
