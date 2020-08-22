@@ -1,5 +1,5 @@
 ---
-date: 2012-05-28T21:13:58Z
+date: '2012-05-28'
 draft: false
 template: post.mustache
 title: "Hello World"

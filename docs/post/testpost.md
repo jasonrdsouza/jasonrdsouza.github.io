@@ -1,6 +1,7 @@
 ---
 title: "Test Post"
-tags: ['code', 'dartlang']
+tags: ['formatting', 'templates', 'embedding', 'a really long tag', 'trying to overflow']
+date: '2020-08-22'
 template: post.mustache
 testTag: tag variable
 ---

@@ -1,5 +1,5 @@
 ---
-date: 2015-02-03T02:36:59Z
+date: '2015-02-03'
 template: post.mustache
 title: "Sorting"
 description: "Sorting is a fundamental, yet often overlooked aspect of computer science due to its status as an effectively 'solved problem'. The state of the art sorting algorithms at the fingertips of most developers are the result of much research and experimentation. This post serves as a crash course on sorting basics, leading up to an understanding of the modern algorithms."

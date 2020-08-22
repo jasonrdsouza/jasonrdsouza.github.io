@@ -1,5 +1,5 @@
 ---
-date: 2014-02-23T21:13:58Z
+date: '2014-02-23'
 draft: false
 template: post.mustache
 title: "The Elements of (Ruby) Style"

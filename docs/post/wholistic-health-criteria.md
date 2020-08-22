@@ -1,5 +1,5 @@
 ---
-date: 2012-12-29T21:13:58Z
+date: '2012-12-29'
 template: post.mustache
 draft: false
 title: "Wholistic Health Criteria"

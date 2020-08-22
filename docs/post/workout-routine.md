@@ -1,5 +1,5 @@
 ---
-date: 2012-09-05T21:13:58Z
+date: '2012-09-05'
 template: post.mustache
 draft: false
 title: "Workout Routine"

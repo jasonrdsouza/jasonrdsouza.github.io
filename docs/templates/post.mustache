@@ -12,6 +12,15 @@
 
 <h1>{{title}}</h1>
 
+<div class="subtitle">
+  <ul class="tags">
+    {{#tags}}
+    <li><a href="#" class="tag">{{.}}</a></li>
+    {{/tags}}
+    <li class="tag">{{date}}</li>
+  </ul>
+</div>
+
 <main>
   {{{content}}}
 </main>
