@@ -1,5 +1,5 @@
 ---
-date: 2013-10-14T21:13:58Z
+date: '2013-10-14'
 draft: false
 template: post.mustache
 title: "The Ruby Environment"

@@ -1,5 +1,5 @@
 ---
-date: 2013-10-19T21:13:58Z
+date: '2013-10-19'
 template: post.mustache
 draft: false
 title: "On Technical Debt"

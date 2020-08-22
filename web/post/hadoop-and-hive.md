@@ -1,5 +1,5 @@
 ---
-date: 2014-01-26T21:13:58Z
+date: '2014-01-26'
 draft: false
 template: post.mustache
 title: "Introduction to Hadoop and Hive"
