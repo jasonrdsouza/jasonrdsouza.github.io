@@ -1,9 +1,7 @@
-<p>Site under construction... old links should still work</p>
-<ul>
-<li><a href="post/testpost">A test post</a></li>
-</ul>
+<p>Site under construction... old links should still work. For old layout see <a href="http://old.jasondsouza.org">here</a>.</p>
 <h3 id="archive">Archive</h3>
 <ul>
+<li><a href="post/pfab-compression">PFAB Compression</a></li>
 <li><a href="post/caesar-cipher-decryption">Caesar Cipher Decryption</a></li>
 <li><a href="post/sorting">Sorting</a></li>
 <li><a href="post/elements-of-ruby-style">The Elements of (Ruby) Style</a></li>

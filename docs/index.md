@@ -3,12 +3,11 @@ title: "homepage"
 template: index.mustache
 ---
 
-Site under construction... old links should still work
-
-- [A test post](post/testpost)
+Site under construction... old links should still work. For old layout see [here](http://old.jasondsouza.org).
 
 ### Archive
 
+- [PFAB Compression](post/pfab-compression)
 - [Caesar Cipher Decryption](post/caesar-cipher-decryption)
 - [Sorting](post/sorting)
 - [The Elements of (Ruby) Style](post/elements-of-ruby-style)

@@ -3,6 +3,7 @@ date: '2014-02-23'
 draft: false
 template: post.mustache
 title: "The Elements of (Ruby) Style"
+tags: ['programming', 'ruby']
 description: "Simple, but powerful rules to enhance the quality of ruby code"
 ---
 

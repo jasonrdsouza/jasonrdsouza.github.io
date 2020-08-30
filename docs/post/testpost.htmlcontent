@@ -27,11 +27,11 @@
 }
 </code></pre>
 <h2 id="transclusion">Transclusion</h2>
-<p>And this snippet is transcluded from a file:</p>
-<p><em>Note that transclusion directly from a post uses different path semantics than a regular reference. This is because the post transclusion happens as part of the static site generation pipeline, before the rest of the assets have been moved to their final places. (The other references are used by the browser, post-site gen). Practically this means that you must use the <code>web/static/...</code> relative path instead of the <code>/static/...</code> path that we use elsewhere</em></p><pre>
+<p>And this snippet is transcluded from a file:</p><pre>
 <code class="language-html">
 google-site-verification: googlef7b46688e3c22ec7.html</code>
 </pre>
+<p><em>Note that transclusion directly from a post uses different path semantics than a regular reference. This is because the post transclusion happens as part of the static site generation pipeline, before the rest of the assets have been moved to their final places. (The other references are used by the browser, post-site gen). Practically this means that you must use the <code>web/static/...</code> relative path instead of the <code>/static/...</code> path that we use elsewhere</em></p>
 <h2 id="client-side-logic">Client Side Logic</h2>
 <p>Custom frontend logic to manipulate post:</p><pre><code id="sample"></code></pre>
 <p>The element above is populated via dart running on the client.</p><script src="/scripts/samplePopulate.dart.js"></script>

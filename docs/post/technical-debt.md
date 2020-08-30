@@ -3,6 +3,7 @@ date: '2013-10-19'
 template: post.mustache
 draft: false
 title: "On Technical Debt"
+tags: ['engineering']
 description: "Technical debt is not universally bad, in the same way that regular debt is not universally bad. This post is a summary of my thoughts on how to think about and deal with technical debt in an intelligent manner."
 ---
 
