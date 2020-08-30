@@ -20,6 +20,7 @@ Python session to generate the entire RGB to ANSI color mapping (mostly cribbed 
 import pickle
 with open('ansi_color_dict.pkl.txt', 'rb') as f:
     color_dict = pickle.load(f)
+
 def euclidean_distance(color1, color2):
     diff = lambda x, y: (y - x) ** 2
     distance = 0
