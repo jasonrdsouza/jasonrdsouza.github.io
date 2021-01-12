@@ -9,7 +9,7 @@ template: note.mustache
 I recently set up a reverse proxy for my [homelab](https://www.reddit.com/r/homelab/), and one of the things I wanted to do was enable subdomains of a domain I own (`dsouza.io`) to point at distinct services that I host. I knew this required a reverse proxy like [Nginx](https://www.nginx.com/) or [Caddy](https://caddyserver.com/), but wasn't sure of the exact steps required. What follows is a lightly edited version of the notes I took along the way to figuring it out.
 
 ## CNAMEs
-Since I host most of my services on AppEngine, Google Cloud, or Github, I've only ever had to follow their instructions and create CNAME records to point to their servers, and never really spent the time to understand how things work under the hood. Doing it myself made me realize that a CNAME record simply allows you to point one (sub)domain name to another, allowing you to redirect requests for multiple domains all to the same IP address (and subsequently the same server).
+Since I host most of my services on AppEngine, Google Cloud, or Github, I've only ever had to follow their instructions and create DNS records to point to their servers, and never really spent the time to understand how things work under the hood. Doing it myself made me realize that a [CNAME record](https://en.wikipedia.org/wiki/CNAME_record) simply allows you to point one (sub)domain name to another, allowing you to redirect requests for multiple domains all to the same IP address (and subsequently the same server).
 
 Once you have that set up, you can check that the domain names are resolving as expected with the [dig](https://en.wikipedia.org/wiki/Dig_(command)) command line tool. For example:
 
@@ -45,7 +45,7 @@ Since I use a residential ISP, my home IP address is subject to change over time
 Most providers make it relatively easy to enable Dynamic DNS. In my case, I use [Google Domains](https://domains.google.com/registrar), and they provide [simple instructions](https://support.google.com/domains/answer/6147083?hl=en) for enabling it.
 
 ## Port Forwarding
-With Dynamic DNS enabled, requests to your domain name will resolve to your IP address, but that doesn't mean that they will automatically be able to hit your home server. Most routers have a firewall to disallow incoming traffic. This is a good thing, since the majority of users don't intend to expose any services to the wider internet, but in our case, we need to enable incoming traffic to hit our server. To do that, we can open up specific ports on the routers firewall and send the traffic that reaches them to a specific machine running on our local network. This process is colloquially referred to as "port forwarding".
+With Dynamic DNS enabled, requests to your domain name will resolve to your IP address, but that doesn't mean that they will automatically be able to hit your home server. Most routers have a firewall to disallow incoming traffic. This is a good thing, since the majority of users don't intend to expose any services to the wider internet, but in our case, we need to enable incoming traffic to hit our server. To do that, we can open up specific ports on the routers firewall and send the traffic that reaches them to a specific machine running on our local network. This process is colloquially referred to as "[port forwarding](https://en.wikipedia.org/wiki/Port_forwarding)".
 
 Unless you need to expose services on non-standard ports, you likely only want to forward the standard http ports (`80` for regular traffic, and `443` for TLS traffic). They should be forwarded to the local IP address of the machine you're running your reverse proxy on, with any further routing decisions performed by the reverse proxy itself.
 
@@ -65,7 +65,7 @@ jason@dsouza-server:~$ sudo ufw enable # just make sure to enable it again once 
 ```
 
 ## Reverse Proxying
-With that in place, requests from both `wiki.dsouza.io` and `home.dsouza.io` (and any other domains I wish to set up CNAME records for) will reach my server. Then, with a reverse proxy, I can direct those requests to the appropriate services. The services will be running on the local loopback address of my server, each with a distinct associated port. The reverse proxy is what knows how to translate a given domain into a local port so that the appropriate service handles a request.
+With that in place, requests from both [`wiki.dsouza.io`](https://wiki.dsouza.io) and [`home.dsouza.io`](https://home.dsouza.io) (and any other domains I wish to set up CNAME records for) will reach my server. Then, with a reverse proxy, I can direct those requests to the appropriate services. The services will be running on the local loopback address of my server, each with a distinct associated port. The reverse proxy is what knows how to translate a given domain into a local port so that the appropriate service handles a request.
 
 ### Caddy Example
 On my server, I'm using Caddy, and the relevant sections of the Caddyfile look as follows:
