@@ -1,8 +1,37 @@
-<h2 id="background">Background</h2>
-<p>I recently set up a reverse proxy for my <a href="https://www.reddit.com/r/homelab/">homelab</a>, and one of the things I wanted to do was enable subdomains of a domain I own (<code>dsouza.io</code>) to point at distinct services that I host. I knew this required a reverse proxy like <a href="https://www.nginx.com/">Nginx</a> or <a href="https://caddyserver.com/">Caddy</a>, but wasn't sure of the exact steps required. What follows is a lightly edited version of the notes I took along the way to figuring it out.</p>
+<html>
+<head>
+  <title>Homelab Server</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/ico" href="/static/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/fonts.css">
+  <link rel="stylesheet" type="text/css" href="/css/prism.css">
+  <script src="/js/prism.js"></script>
+  <script src="/scripts/base.dart.js"></script>
+</head>
+<body>
+
+<h1>Homelab Server</h1>
+
+<div class="subtitle">
+  <ul class="tags">
+    <li><a href="#" class="tag">homelab</a></li>
+    <li><a href="#" class="tag">caddy</a></li>
+    <li class="tag">2020-01-11</li>
+  </ul>
+</div>
+
+<main>
+  <h2 id="background">Background</h2>
+<p>I recently decided to set up a new server for my <a href="https://www.reddit.com/r/homelab/">homelab</a>. Unlike my other home servers, which are only accessible over the local network, I wanted this one to be available to the wider internet, with specific services visible on subdomains of a domain I own (<code>dsouza.io</code>). I knew this required a reverse proxy like <a href="https://www.nginx.com/">Nginx</a> or <a href="https://caddyserver.com/">Caddy</a>, but wasn't sure of the exact steps needed. What follows is a lightly edited version of the notes I took along the way to figuring it out.</p>
+<h2 id="dynamic-dns">Dynamic DNS</h2>
+<p>Since I use a residential ISP, my home IP address is subject to change over time, so to ensure that a domain name continues to resolve to my home server, I needed to set up <a href="https://en.wikipedia.org/wiki/Dynamic_DNS">Dynamic DNS</a>. This basically involves installing software on your server that communicates with your domain name provider and periodically refreshes the IP address that the domain name provides associates with your domain name.</p>
+<p>Most providers make it relatively easy to enable Dynamic DNS. In my case, I use <a href="https://domains.google.com/registrar">Google Domains</a>, and they provide <a href="https://support.google.com/domains/answer/6147083?hl=en">simple instructions</a> for enabling it.</p>
+<p>I chose to set up <a href="https://home.dsouza.io"><code>home.dsouza.io</code></a> to dynamically point to my residential IP.</p>
 <h2 id="cnames">CNAMEs</h2>
 <p>Since I host most of my services on AppEngine, Google Cloud, or Github, I've only ever had to follow their instructions and create DNS records to point to their servers, and never really spent the time to understand how things work under the hood. Doing it myself made me realize that a <a href="https://en.wikipedia.org/wiki/CNAME_record">CNAME record</a> simply allows you to point one (sub)domain name to another, allowing you to redirect requests for multiple domains all to the same IP address (and subsequently the same server).</p>
-<p>Once you have that set up, you can check that the domain names are resolving as expected with the <a href="https://en.wikipedia.org/wiki/Dig_(command)">dig</a> command line tool. For example:</p>
+<p>This is useful if you have multiple distinct services running on a single server (or really, behind a single IP address), and want them to each have their own subdomain. In my case, for example, I have a personal wiki service running on the same box as the webserver serving <a href="https://home.dsouza.io"><code>home.dsouza.io</code></a>, but wanted the wiki accessible from <a href="https://wiki.dsouza.io"><code>wiki.dsouza.io</code></a>. CNAME records make this possible.</p>
+<p>Once you have the records set up, you can check that the domain names are resolving as expected with the <a href="https://en.wikipedia.org/wiki/Dig_(command)">dig</a> command line tool. For example:</p>
 <pre><code class="language-bash">jason@dsouza-laptop ~&gt; dig wiki.dsouza.io
 
 ; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; wiki.dsouza.io
@@ -26,11 +55,8 @@ home.dsouza.io.		59	IN	A	108.20.205.69
 ;; MSG SIZE  rcvd: 78
 </code></pre>
 <p>In this case, you can see that <a href="https://wiki.dsouza.io"><code>wiki.dsouza.io</code></a> points to <a href="https://home.dsouza.io"><code>home.dsouza.io</code></a>, which in turn points to my home server.</p>
-<h2 id="dynamic-dns">Dynamic DNS</h2>
-<p>Since I use a residential ISP, my home IP address is subject to change over time, so to ensure that the domain name continues to resolve to my home server, I needed to set up <a href="https://en.wikipedia.org/wiki/Dynamic_DNS">Dynamic DNS</a>. This basically involves installing software on your server that communicates with your domain name provider and periodically refreshes the IP address that the domain name provides associates with your domain name.</p>
-<p>Most providers make it relatively easy to enable Dynamic DNS. In my case, I use <a href="https://domains.google.com/registrar">Google Domains</a>, and they provide <a href="https://support.google.com/domains/answer/6147083?hl=en">simple instructions</a> for enabling it.</p>
 <h2 id="port-forwarding">Port Forwarding</h2>
-<p>With Dynamic DNS enabled, requests to your domain name will resolve to your IP address, but that doesn't mean that they will automatically be able to hit your home server. Most routers have a firewall to disallow incoming traffic. This is a good thing, since the majority of users don't intend to expose any services to the wider internet, but in our case, we need to enable incoming traffic to hit our server. To do that, we can open up specific ports on the routers firewall and send the traffic that reaches them to a specific machine running on our local network. This process is colloquially referred to as "<a href="https://en.wikipedia.org/wiki/Port_forwarding">port forwarding</a>".</p>
+<p>With Dynamic DNS enabled, requests to your domain name will resolve to your IP address, but that doesn't mean that they will automatically be able to hit your home server. Most routers have a firewall to disallow incoming traffic. This is a good thing, since the majority of users don't intend to expose any services to the wider internet, but in our case, we need to enable incoming traffic to hit our server. To do that, we can open up specific ports on the routers' firewall and send the traffic that reaches them to a chosen machine running on our local network. This process is colloquially referred to as "<a href="https://en.wikipedia.org/wiki/Port_forwarding">port forwarding</a>".</p>
 <p>Unless you need to expose services on non-standard ports, you likely only want to forward the standard http ports (<code>80</code> for regular traffic, and <code>443</code> for TLS traffic). They should be forwarded to the local IP address of the machine you're running your reverse proxy on, with any further routing decisions performed by the reverse proxy itself.</p>
 <p><em>Note that some routers can themselves run a reverse proxy, allowing you to contain all the routing logic to the router itself.</em></p>
 <h2 id="local-firewall">Local Firewall</h2>
@@ -43,7 +69,7 @@ jason@dsouza-server:~$ sudo ufw disable # if things aren't working, you can try 
 jason@dsouza-server:~$ sudo ufw enable # just make sure to enable it again once you figure out the issue
 </code></pre>
 <h2 id="reverse-proxying">Reverse Proxying</h2>
-<p>With that in place, requests from both <a href="https://wiki.dsouza.io"><code>wiki.dsouza.io</code></a> and <a href="https://home.dsouza.io"><code>home.dsouza.io</code></a> (and any other domains I wish to set up CNAME records for) will reach my server. Then, with a reverse proxy, I can direct those requests to the appropriate services. The services will be running on the local loopback address of my server, each with a distinct associated port. The reverse proxy is what knows how to translate a given domain into a local port so that the appropriate service handles a request.</p>
+<p>With that in place, requests from both <a href="https://wiki.dsouza.io"><code>wiki.dsouza.io</code></a> and <a href="https://home.dsouza.io"><code>home.dsouza.io</code></a> (and any other domains I wish to set up CNAME records for) will reach my server. Then, with a reverse proxy, I can direct those requests to the appropriate local services. The services will be running on the local loopback address of my server, each with a distinct associated port. The reverse proxy is what knows how to translate a given domain into a local port so that the appropriate service handles a request.</p>
 <h3 id="caddy-example">Caddy Example</h3>
 <p>On my server, I'm using Caddy, and the relevant sections of the Caddyfile look as follows:</p>
 <pre><code class="language-caddy">home.dsouza.io {
@@ -206,5 +232,10 @@ server {
 ... many more services omitted
 </code></pre>
 <p>Both follow a similar pattern of redirecting a subdomain request to a locally running service. This is where the "reverse proxy" name comes from, because unlike a "regular" proxy, which a user goes through in order to access the wider internet, a reverse proxy fronts web accessible resources, serving them at a clients request.</p>
-<h2 id="auth">Auth</h2>
-<p><em>... todo explainer and setup guide</em></p>
+<h2 id="success">Success</h2>
+<p>And with that, navigating to <a href="https://home.dsouza.io"><code>home.dsouza.io</code></a> resolves to the new box in my house and displays a landing page served by Caddy, and <a href="https://wiki.dsouza.io"><code>wiki.dsouza.io</code></a> directs clients to the wiki software I have running!</p>
+
+</main>
+
+</body>
+</html>
