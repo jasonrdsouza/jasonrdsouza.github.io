@@ -7,6 +7,7 @@ Site under construction... old links should still work. For old layout see [here
 
 ### Archive
 
+- [Homelab Server Setup](post/homelab-server)
 - [PFAB Compression](post/pfab-compression)
 - [Caesar Cipher Decryption](post/caesar-cipher-decryption)
 - [Sorting](post/sorting)
