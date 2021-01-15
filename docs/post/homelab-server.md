@@ -1,8 +1,8 @@
 ---
-title: "Homelab Server"
+title: "Homelab Server Setup"
 tags: ['homelab', 'caddy']
 date: '2020-01-11'
-template: note.mustache
+template: post.mustache
 ---
 
 ## Background
