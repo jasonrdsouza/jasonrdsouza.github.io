@@ -5,7 +5,7 @@ template: index.mustache
 
 Site under construction... old links should still work. For old layout see [here](http://old.jasondsouza.org).
 
-### Archive
+### posts
 
 - [Homelab Server Setup](post/homelab-server)
 - [PFAB Compression](post/pfab-compression)
@@ -18,3 +18,7 @@ Site under construction... old links should still work. For old layout see [here
 - [Wholistic Health Criteria](post/wholistic-health-criteria)
 - [Workout Routine](post/workout-routine)
 - [Hello World](post/hello-world)
+
+### [projects](https://cdn.dsouza.io/)
+
+### [spellbook](/spells/)
