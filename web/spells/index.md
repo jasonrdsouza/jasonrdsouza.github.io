@@ -5,13 +5,17 @@ date: '2020-01-17'
 template: spell.mustache
 ---
 
-Collection of useful snippets, based on the "Today I Learned (TIL)" repo idea.
+Collection of useful snippets, based on the "Today I Learned (TIL)" repo idea:
 
-See other examples here:
-- [https://github.com/jbranchaud/til](https://github.com/jbranchaud/til)
-- [https://til.hashrocket.com/](https://til.hashrocket.com/)
-- [https://github.com/jwworth/til](https://github.com/jwworth/til)
-- [https://github.com/thoughtbot/til](https://github.com/thoughtbot/til)
+- [aws](/spells/aws)
+- [git](/spells/git)
+- [json](/spells/json)
+- [kakoune](/spells/kakoune)
+- [python](/spells/python)
+- [tmux](/spells/tmux)
+- [unix](/spells/unix)
+- [updwn](/spells/updwn)
+- [vim](/spells/vim)
 
 ### New Entry Template
 
@@ -23,3 +27,11 @@ See other examples here:
 - Source (text)
 
 See example template [here](/spells/template).
+
+
+### References
+
+- [https://github.com/jbranchaud/til](https://github.com/jbranchaud/til)
+- [https://til.hashrocket.com/](https://til.hashrocket.com/)
+- [https://github.com/jwworth/til](https://github.com/jwworth/til)
+- [https://github.com/thoughtbot/til](https://github.com/thoughtbot/til)
