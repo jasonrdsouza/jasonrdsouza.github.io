@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Unix Spells</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/ico" href="/static/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/fonts.css">
+  <link rel="stylesheet" type="text/css" href="/css/prism.css">
+  <script src="/js/prism.js"></script>
+  <script src="/scripts/base.dart.js"></script>
+</head>
+<body>
+
+<h1>Unix Spells</h1>
+
+<div class="subtitle">
+  <ul class="tags">
+    <li><a href="#" class="tag">cli</a></li>
+    <li><a href="#" class="tag">less</a></li>
+    <li><a href="#" class="tag">bash</a></li>
+    <li><a href="#" class="tag">fish</a></li>
+  </ul>
+</div>
+
+<main>
+  <h2 id="general">General</h2>
+<h3 id="check-network-utilization">Check Network Utilization</h3>
+<pre><code class="language-bash">sudo iftop -B
+</code></pre>
+<h3 id="process-substitution">Process Substitution</h3>
+<p>Creating a named pipe is done in <a href="https://fishshell.com/">fish</a> with the <code>psub</code> command as follows:</p>
+<pre><code>diff (sort a.txt | psub) (sort b.txt | psub)
+</code></pre>
+<p>References: <code>man psub</code></p>
+<h3 id="extract-and-pretty-print-stack-trace-from-logback-logs">Extract and Pretty Print Stack Trace from Logback Logs</h3>
+<pre><code class="language-bash">cat tmp | jq ".stack_trace" | xargs printf
+</code></pre>
+<h2 id="less">Less</h2>
+<p>Tips and tricks with less</p>
+<h3 id="display-ansi-color-codes">Display ANSI color codes</h3>
+<pre><code class="language-bash">less -R
+</code></pre>
+<h3 id="display-line-numbers">Display Line Numbers</h3>
+<pre><code class="language-bash">less -N
+</code></pre>
+<p>All these less commands can be passed in as args, or when already in less.
+Also, some of the search and movement syntax of vim works in less as well.</p>
+<h2 id="tcpdump">Tcpdump</h2>
+<p>To make the output legible, as well as manageable, make sure to</p>
+<ol>
+<li>specify the port you care about</li>
+<li>use the -XX and -i flags to get ascii output next to the binary</li>
+</ol>
+<pre><code class="language-bash">sudo tcpdump -XX -i eth0 port 44380 &gt; /tmp/dump
+</code></pre>
+
+</main>
+
+</body>
+</html>

@@ -1,1 +1,61 @@
-
+<h2 id="background">Background</h2>
+<p>After <a href="/homelab-server">setting up my homelab server</a>, I immediately got worried about the security of having a computer with private/ personal data on it open to the internet. That sent me down a rabbit hole of best practices and considerations, the result of which I've written up here. Hopefully it's helpful for other people hoping to self host.</p>
+<h2 id="updates">Updates</h2>
+<ul>
+<li>os updates</li>
+<li>software updates (through package manager, or other means)
+<ul>
+<li>slightly less important if you front the service with an auth portal served by your reverse proxy</li>
+<li>but this makes it essential that you keep the reverse proxy up to date</li>
+</ul>
+</li>
+</ul>
+<h2 id="ssh-security">SSH Security</h2>
+<ul>
+<li>disable password login (only use public key)</li>
+<li>other stuff to disable</li>
+<li>fail2ban mention</li>
+<li>creating system users that don't have shell/ login ability?</li>
+<li>if a shared system, only whitelist specific user accounts</li>
+</ul>
+<h2 id="tls-everywhere">TLS Everywhere</h2>
+<ul>
+<li>Caddy makes this super easy, but even with Nginx and Certbot, it's very automated/ easy... no excuse to be serving unencrypted traffic</li>
+</ul>
+<h2 id="service-auth">Service Auth</h2>
+<ul>
+<li>Gate everything behind an auth screen served by your reverse proxy
+<ul>
+<li>this secures your private data while allowing you to centralize the user accounts</li>
+<li>also adds additional protection just in case one of the services you're running does have a vulnerability</li>
+</ul>
+</li>
+<li>Discussion of basic auth and how it's good enough if you ensure TLS</li>
+<li>SSO as future work?</li>
+</ul>
+<h2 id="log-retention">Log Retention</h2>
+<p>For reverse proxy (caddy example), and running services like sshd.</p>
+<h2 id="sshd-log-analysis-raw-notes">SSHd Log Analysis Raw Notes</h2>
+<p>sshd logs located in /var/log/auth.log (rotation enabled by default, so might need to decompress and concatenate files together depending on desired analysis time range)</p>
+<p>Once you have the file, you can use simple UNIX commands to glean insights</p>
+<p>Analysis date range:</p>
+<pre><code class="language-bash">cat auth.log | cut -c 1-6 | sort | uniq
+</code></pre>
+<p>Successful login attempts:</p>
+<pre><code class="language-bash">cat auth.log | grep 'sshd' | grep 'session opened' | wc -l
+</code></pre>
+<p>Unique successful login usernames:</p>
+<pre><code class="language-bash">cat auth.log | grep sshd | grep 'session opened' | awk '{ print $11 }' | sort | uniq
+</code></pre>
+<p>Unique IP addresses that successfully logged in:</p>
+<pre><code class="language-bash">cat auth.log | grep 'sshd' | grep '.*Accepted publickey.*' | awk '{ print $11 }' | sort | uniq
+</code></pre>
+<p>Failed login attempts:</p>
+<pre><code class="language-bash">cat auth.log | grep 'sshd' | grep 'Invalid user' | wc -l
+</code></pre>
+<p>Failed login users (grouped and sorted by attempts):</p>
+<pre><code class="language-bash">cat auth.log | grep 'sshd' | grep 'Invalid user' | awk '{ print $8 }' | sort | uniq -c | sort -r
+</code></pre>
+<p>Failed login IPs grouped and sorted by attempts:</p>
+<pre><code class="language-bash">cat auth.log | grep 'sshd' | grep 'Invalid user' | awk '{ print $10 }' | sort | uniq -c | sort -r
+</code></pre>

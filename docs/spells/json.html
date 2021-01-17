@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>JSON Spells</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/ico" href="/static/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/fonts.css">
+  <link rel="stylesheet" type="text/css" href="/css/prism.css">
+  <script src="/js/prism.js"></script>
+  <script src="/scripts/base.dart.js"></script>
+</head>
+<body>
+
+<h1>JSON Spells</h1>
+
+<div class="subtitle">
+  <ul class="tags">
+    <li><a href="#" class="tag">jq</a></li>
+    <li><a href="#" class="tag">cli</a></li>
+  </ul>
+</div>
+
+<main>
+  <h2 id="jq-command-line-json-parser">JQ Command Line JSON Parser</h2>
+<p><a href="https://stedolan.github.io/jq/">https://stedolan.github.io/jq/</a></p>
+<h3 id="extract-specific-field-from-json-array-of-dicts">Extract specific field from JSON Array of Dicts</h3>
+<pre><code class="language-bash">jq ".ArrayKey[].SpecificFieldInDict"
+</code></pre>
+<h3 id="print-strings-without-quotes">Print strings without quotes</h3>
+<pre><code class="language-bash">jq --raw-output ".id"
+</code></pre>
+<h3 id="make-each-json-object-only-take-up-1-line">Make each JSON object only take up 1 line</h3>
+<pre><code class="language-bash"># Quickly count how many objects there are
+jq ".events[].message" --compact-output | wc -l
+</code></pre>
+<h3 id="get-a-range-of-a-json-array">Get a range of a JSON array</h3>
+<pre><code class="language-bash">jq ".events[0:6]"
+</code></pre>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Terminal Multiplexer Spells</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/ico" href="/static/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/fonts.css">
+  <link rel="stylesheet" type="text/css" href="/css/prism.css">
+  <script src="/js/prism.js"></script>
+  <script src="/scripts/base.dart.js"></script>
+</head>
+<body>
+
+<h1>Terminal Multiplexer Spells</h1>
+
+<div class="subtitle">
+  <ul class="tags">
+    <li><a href="#" class="tag">iterm</a></li>
+    <li><a href="#" class="tag">tmux</a></li>
+    <li><a href="#" class="tag">screen</a></li>
+  </ul>
+</div>
+
+<main>
+  <h2 id="tmux">Tmux</h2>
+<h3 id="iterm-and-tmux-integration">iTerm and Tmux Integration</h3>
+<p>Tmux integrates with iTerm to create a seperate iTerm window (with all the normal shortcut keys),
+instead of a virtual one. This can be accomplished as follows:</p>
+<ol>
+<li>in iTerm, ssh to the host you want to run tmux in</li>
+<li>run <code>tmux -CC</code>, which should create a new iTerm window. Running normal commands like <code>&lt;CMD&gt;-T</code> to create a new tab will create a new virtual tab on the host you are sshed into</li>
+<li>detach by pressing <code>&lt;ESC&gt;</code> in the original window that you ran <code>tmux -CC</code> in</li>
+<li>reattach by running <code>tmux -CC attach</code></li>
+</ol>
+<h2 id="screen">Screen</h2>
+<pre><code># reattach to screen session
+screen -r &lt;ID&gt;
+# detach from screen session
+&lt;CTRL&gt;-A, &lt;CTRL&gt;-D
+</code></pre>
+
+</main>
+
+</body>
+</html>

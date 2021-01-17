@@ -1,0 +1,65 @@
+<html>
+<head>
+  <title>AWS Tricks</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/ico" href="/static/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/fonts.css">
+  <link rel="stylesheet" type="text/css" href="/css/prism.css">
+  <script src="/js/prism.js"></script>
+  <script src="/scripts/base.dart.js"></script>
+</head>
+<body>
+
+<h1>AWS Tricks</h1>
+
+<div class="subtitle">
+  <ul class="tags">
+    <li><a href="#" class="tag">aws</a></li>
+    <li><a href="#" class="tag">s3</a></li>
+    <li><a href="#" class="tag">boto3</a></li>
+    <li><a href="#" class="tag">iam</a></li>
+    <li><a href="#" class="tag">ebs</a></li>
+  </ul>
+</div>
+
+<main>
+  <h3 id="find-and-clean-up-incomplete-multi-part-uploads">Find and clean up incomplete multi-part uploads</h3>
+<pre><code class="language-bash"># List incomplete uploads
+aws --profile PROFILE_NAME s3api list-multipart-uploads --bucket BUCKET_NAME
+# Abort incomplete uploads (and remove any temporary files)
+aws --profile personal s3api abort-multipart-upload --bucket BUCKET_NAME --key KEY_NAME --upload-id UPLOAD_ID
+</code></pre>
+<h3 id="using-aws-roles">Using AWS Roles</h3>
+<p>Incantation to use boto with a specific profile from your <code>.aws/credentials</code> file:</p>
+<pre><code class="language-python">import boto3
+
+session = boto3.Session(profile_name='NAME_OF_PROFILE_IN_CREDENTIALS_FILE')
+dynamoClient = session.client('dynamodb')
+</code></pre>
+<p>Using a profile in java:</p>
+<pre><code class="language-java">import com.amazonaws.services.s3.AmazonS3Client
+import com.amazonaws.auth.profile.ProfileCredentialsProvider
+
+val s3Client = new AmazonS3Client(new ProfileCredentialsProvider("sandbox"))
+</code></pre>
+<h3 id="formatting-and-mounting-an-ebs-volume">Formatting and Mounting an EBS Volume</h3>
+<pre><code class="language-bash"># View available disk devices and their mount points
+~$ lsblk
+# Check if the device already has a file system
+~$ sudo file -s /dev/xvdb
+# If there is no file system, create one like so
+~$ sudo mkfs -t ext4 /dev/xvdb
+# Create a mount point, and mount the volume
+~$ sudo mkdir /data
+~$ sudo mount /dev/xvdb /data
+# Check that the volume was mounted properly
+~$ df -h
+</code></pre>
+<p>Dont forget to change permissions/ ownership of the mount point depending on
+who/ what needs to write to it.</p>
+
+</main>
+
+</body>
+</html>

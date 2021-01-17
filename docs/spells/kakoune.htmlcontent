@@ -1,0 +1,12 @@
+<h1 id="kakoune">Kakoune</h1>
+<p>Modal editor inspired by Vim</p>
+<pre><code>code block
+</code></pre>
+<p>Notes, reminders, gotchas, etc</p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://kakoune.org/">https://kakoune.org/</a></li>
+<li><a href="https://github.com/mawww/kakoune/blob/master/README.asciidoc">https://github.com/mawww/kakoune/blob/master/README.asciidoc</a></li>
+<li><a href="https://github.com/mawww/kakoune/tree/master/doc">https://github.com/mawww/kakoune/tree/master/doc</a></li>
+<li><a href="https://github.com/mawww/kakoune/tree/master/doc/pages">https://github.com/mawww/kakoune/tree/master/doc/pages</a></li>
+</ul>

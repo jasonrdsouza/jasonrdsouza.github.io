@@ -1,0 +1,84 @@
+<html>
+<head>
+  <title>Git Spells</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/ico" href="/static/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/fonts.css">
+  <link rel="stylesheet" type="text/css" href="/css/prism.css">
+  <script src="/js/prism.js"></script>
+  <script src="/scripts/base.dart.js"></script>
+</head>
+<body>
+
+<h1>Git Spells</h1>
+
+<div class="subtitle">
+  <ul class="tags">
+    <li><a href="#" class="tag">git</a></li>
+    <li><a href="#" class="tag">github</a></li>
+  </ul>
+</div>
+
+<main>
+  <h3 id="move-master-branch-pointer-to-previous-commit">Move master branch pointer to previous commit</h3>
+<p>For example, if you accidentally commit to master instead of making a branch</p>
+<pre><code class="language-bash">git reset --hard master~1
+</code></pre>
+<h3 id="remove-unnecessary-whitespace">Remove unnecessary whitespace</h3>
+<p><a href="http://git-scm.com/docs/git-stripspace">http://git-scm.com/docs/git-stripspace</a></p>
+<pre><code class="language-bash">git stripspace
+</code></pre>
+<h3 id="see-unique-authors-by-commit-amount">See unique authors (by commit amount)</h3>
+<pre><code class="language-bash">git shortlog -sn
+
+# Optionally specifying start and end date
+git shortlog -sn --since='10 weeks' --until='2 weeks'
+</code></pre>
+<h3 id="create-an-archive-of-the-code-ignoring-gitignored-files">Create an archive of the code (ignoring gitignored files!)</h3>
+<pre><code class="language-bash">git archive --format zip --output &lt;filepath&gt; master
+</code></pre>
+<p>You can replace <code>master</code> in the command above with and tag, branch, or sha</p>
+<h3 id="bailing-out-of-an-in-progress-merge">Bailing out of an in-progress merge</h3>
+<pre><code class="language-bash">git merge --abort
+</code></pre>
+<h3 id="ignore-whitespace-in-diff">Ignore whitespace in diff</h3>
+<pre><code class="language-bash">git diff -w
+git show -w
+</code></pre>
+<h3 id="show-changed-words-instead-of-lines">Show changed words instead of lines</h3>
+<pre><code class="language-bash">git diff --word-diff
+</code></pre>
+<h3 id="apply-a-patch">Apply a patch</h3>
+<p>Most often, the "patch" will be a diff file created with <code>git diff</code>.</p>
+<pre><code class="language-bash">git checkout &lt;BRANCH_TO_APPLY_PATCH_TO&gt;
+git apply &lt;PATH_TO_PATCH_FILE&gt;
+</code></pre>
+<h2 id="github">Github</h2>
+<h3 id="ignore-whitespace-in-github-diff">Ignore Whitespace in Github Diff</h3>
+<p>Add <code>?w=1</code> to the URL to see the diff with whitespace ignored</p>
+<h3 id="plaintext-patch-and-diff-view">Plaintext Patch and Diff view</h3>
+<ul>
+<li>Add <code>.diff</code> to a pull request (or individual commit) url to get a plaintext diff view</li>
+<li>Likewise, add <code>.patch</code> to get a plaintext patch view</li>
+</ul>
+<h3 id="adjust-tab-space-in-view">Adjust Tab Space in view</h3>
+<p>Add <code>?ts=4</code> to the URL to change the width of tab characters to 4 spaces</p>
+<h3 id="gist-embedded-view-mode">Gist embedded view mode</h3>
+<p>Add <code>.pibb</code> to the end of a Gist url in order to get an HTML only version of the gist suitable for display</p>
+<h3 id="line-highlighting">Line highlighting</h3>
+<p>Adding <code>#L52</code> to the end of a code file url will highlight that line. Clicking the line works as well.
+This also works with ranges, like <code>#L53-L60</code>. Holding shift and clicking the two lines works as well.</p>
+<h3 id="closing-issues-via-commit-messages">Closing issues via Commit Messages</h3>
+<p>If a particular commit fixes an issue, any of the keywords <code>fix/fixes/fixed</code>, <code>close/closes/closed</code>
+or <code>resolve/resolves/resolved</code>, followed by the issue number, will close the issue once it is committed
+to the master branch.</p>
+<h3 id="public-ssh-keys">Public SSH Keys</h3>
+<p>You can get a list of public ssh keys in plain text format by visiting:</p>
+<pre><code>https://github.com/{user}.keys
+</code></pre>
+
+</main>
+
+</body>
+</html>

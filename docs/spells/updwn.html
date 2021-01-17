@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Updown Hack</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/ico" href="/static/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/fonts.css">
+  <link rel="stylesheet" type="text/css" href="/css/prism.css">
+  <script src="/js/prism.js"></script>
+  <script src="/scripts/base.dart.js"></script>
+</head>
+<body>
+
+<h1>Updown Hack</h1>
+
+<div class="subtitle">
+  <ul class="tags">
+    <li><a href="#" class="tag">updown</a></li>
+    <li><a href="#" class="tag">javascript</a></li>
+  </ul>
+</div>
+
+<main>
+  <h2 id="updwn-auto-change-title-hack">UpDwn Auto-change Title Hack</h2>
+<p><a href="http://updwn.co/">http://updwn.co/</a></p>
+<pre><code class="language-javascript">var myTitle = 'Jen Page (all rooms named Jen Page)';
+var id = '-KAKt5llsPClHGzbQAtG';
+function changeIt() {
+  if ($('.edit[data-id=' + id).data('title') !== myTitle) {
+    optionsRef.child(id + '/title').set('myTitle');
+  }
+  window.setTimeout(changeIt, 1);
+}
+</code></pre>
+<p>Source: Jen Page</p>
+
+</main>
+
+</body>
+</html>

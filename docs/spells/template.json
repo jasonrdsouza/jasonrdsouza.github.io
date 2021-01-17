@@ -1,0 +1,1 @@
+{"title":"Spell Template","tags":["example","template"],"date":"2020-01-17","template":"spell.mustache","CORK_url":"spells/template.html","CORK_reading_time":1,"content":"<h3 id=\"incantation-name\">Incantation Name</h3>\n<p>Description text</p>\n<pre><code>code block\n</code></pre>\n<p>Notes, reminders, gotchas, etc</p>\n<p>Source</p>\n"}

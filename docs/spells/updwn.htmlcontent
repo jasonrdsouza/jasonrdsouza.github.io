@@ -1,0 +1,12 @@
+<h2 id="updwn-auto-change-title-hack">UpDwn Auto-change Title Hack</h2>
+<p><a href="http://updwn.co/">http://updwn.co/</a></p>
+<pre><code class="language-javascript">var myTitle = 'Jen Page (all rooms named Jen Page)';
+var id = '-KAKt5llsPClHGzbQAtG';
+function changeIt() {
+  if ($('.edit[data-id=' + id).data('title') !== myTitle) {
+    optionsRef.child(id + '/title').set('myTitle');
+  }
+  window.setTimeout(changeIt, 1);
+}
+</code></pre>
+<p>Source: Jen Page</p>
