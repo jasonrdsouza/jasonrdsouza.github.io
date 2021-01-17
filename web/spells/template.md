@@ -5,13 +5,14 @@ date: '2020-01-17'
 template: spell.mustache
 ---
 
-# Title
+### Incantation Name
 
 Description text
 
 ```
 code block
 ```
+
 Notes, reminders, gotchas, etc
 
 Source
