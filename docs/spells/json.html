@@ -36,6 +36,13 @@ jq ".events[].message" --compact-output | wc -l
 <h3 id="get-a-range-of-a-json-array">Get a range of a JSON array</h3>
 <pre><code class="language-bash">jq ".events[0:6]"
 </code></pre>
+<h3 id="extract-set-of-fields-from-larger-dict">Extract set of fields from larger dict</h3>
+<pre><code class="language-bash">jq '{desiredName: .fieldName, otherField: .arrayField[0].field, etc: .otherField}'
+
+# Real world example extracting video properties from larger JSON dict
+# the -s directive tells JQ to treat jsonlines format as if it were a JSON array
+cat movie_list.json | jq -c '{filename: .format.filename, width: .streams[0].width, height: .streams[0].height}' | jq -s 'sort_by(.height)' &gt; resolution_sorted_movie_list.json
+</code></pre>
 
 </main>
 

@@ -57,6 +57,16 @@
 <p>Requires that the <code>jq</code> command is installed. <code>%</code> references the current buffer.</p>
 <pre><code class="language-vim">%!jq
 </code></pre>
+<h2 id="execute-command-on-range">Execute command on range</h2>
+<ul>
+<li>The <code>:</code> key puts you into command line mode</li>
+<li>You can then specify a range, such as <code>%</code>, which represents the entire file (alternatively, use visual mode to select the range you want and then enter command mode)</li>
+<li><code>norm</code> or <code>normal</code> tell the command line to run the rest of the sequence in normal mode</li>
+<li>A command such as <code>$x</code> (or any other normal mode incantation) can be used, and will execute over the entire selection</li>
+</ul>
+<p>So, for example, to delete the last character of every line in the buffer, run:</p>
+<pre><code>:%normal $x
+</code></pre>
 <h2 id="execute-command-on-multiple-lines">Execute command on multiple lines</h2>
 <p>The <code>g</code> command is the "global" command to execute other commands. In this case, you can use it with the <code>norm</code> command to perform a change on lines that match a specific pattern (or all lines).</p>
 <p>For example, if you want to add a semicolon to the end of all lines that start with a number, you could do that as follows:</p>

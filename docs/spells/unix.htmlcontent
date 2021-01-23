@@ -28,3 +28,10 @@ Also, some of the search and movement syntax of vim works in less as well.</p>
 </ol>
 <pre><code class="language-bash">sudo tcpdump -XX -i eth0 port 44380 &gt; /tmp/dump
 </code></pre>
+<h2 id="find">Find</h2>
+<h3 id="list-files-with-specific-extension-and-perform-command-on-them">List files with specific extension and perform command on them</h3>
+<pre><code class="language-bash"># In this case, list video files and for each one, extract metadata
+find . -type f \( -iname \*.mkv -o -iname \*.mp4 -o -iname \*.avi \) -print0 | while IFS= read -r -d '' file; do
+  ffprobe -v quiet -print_format json -show_format -show_streams $file;
+done &gt; ~/video_metadata.json
+</code></pre>

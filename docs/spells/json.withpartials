@@ -22,3 +22,12 @@ jq ".events[].message" --compact-output | wc -l
 ```bash
 jq ".events[0:6]"
 ```
+
+### Extract set of fields from larger dict
+```bash
+jq '{desiredName: .fieldName, otherField: .arrayField[0].field, etc: .otherField}'
+
+# Real world example extracting video properties from larger JSON dict
+# the -s directive tells JQ to treat jsonlines format as if it were a JSON array
+cat movie_list.json | jq -c '{filename: .format.filename, width: .streams[0].width, height: .streams[0].height}' | jq -s 'sort_by(.height)' > resolution_sorted_movie_list.json
+```
