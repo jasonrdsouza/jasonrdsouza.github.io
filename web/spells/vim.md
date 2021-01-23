@@ -87,6 +87,18 @@ Requires that the `jq` command is installed. `%` references the current buffer.
 %!jq
 ```
 
+## Execute command on range
+- The `:` key puts you into command line mode
+- You can then specify a range, such as `%`, which represents the entire file (alternatively, use visual mode to select the range you want and then enter command mode)
+- `norm` or `normal` tell the command line to run the rest of the sequence in normal mode
+- A command such as `$x` (or any other normal mode incantation) can be used, and will execute over the entire selection
+
+So, for example, to delete the last character of every line in the buffer, run:
+
+```
+:%normal $x
+```
+
 ## Execute command on multiple lines
 
 The `g` command is the "global" command to execute other commands. In this case, you can use it with the `norm` command to perform a change on lines that match a specific pattern (or all lines).
