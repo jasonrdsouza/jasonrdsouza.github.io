@@ -23,6 +23,6 @@
 </ul>
 <h3 id="me">me</h3>
 <ul>
-<li><a href="/about/">About me</a></li>
-<li><a href="/resume/">My resume</a></li>
+<li><a href="/about">About me</a></li>
+<li><a href="/resume">My resume</a></li>
 </ul>

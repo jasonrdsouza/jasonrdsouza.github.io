@@ -29,5 +29,5 @@ Site under construction... old links should still work. For old layout see [here
 
 ### me
 
-- [About me](/about/)
-- [My resume](/resume/)
+- [About me](/about)
+- [My resume](/resume)
