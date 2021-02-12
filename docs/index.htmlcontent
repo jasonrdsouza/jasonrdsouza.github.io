@@ -13,5 +13,16 @@
 <li><a href="post/workout-routine">Workout Routine</a></li>
 <li><a href="post/hello-world">Hello World</a></li>
 </ul>
-<h3 id="projectshttpscdndsouzaio"><a href="https://cdn.dsouza.io/">projects</a></h3>
-<h3 id="spellbookspells"><a href="/spells/">spellbook</a></h3>
+<h3 id="projects">projects</h3>
+<ul>
+<li>See the projects I've been working on at <a href="https://cdn.dsouza.io/">https://cdn.dsouza.io/</a></li>
+</ul>
+<h3 id="spellbook">spellbook</h3>
+<ul>
+<li>Collection of useful snippets, based on the "Today I Learned (TIL)" repo idea. Predominantly for my own use... located <a href="/spells/">here</a></li>
+</ul>
+<h3 id="me">me</h3>
+<ul>
+<li><a href="/about/">About me</a></li>
+<li><a href="/resume/">My resume</a></li>
+</ul>
