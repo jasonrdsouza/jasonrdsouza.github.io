@@ -19,6 +19,15 @@ Site under construction... old links should still work. For old layout see [here
 - [Workout Routine](post/workout-routine)
 - [Hello World](post/hello-world)
 
-### [projects](https://cdn.dsouza.io/)
+### projects
 
-### [spellbook](/spells/)
+- See the projects I've been working on at [https://cdn.dsouza.io/](https://cdn.dsouza.io/)
+
+### spellbook
+
+- Collection of useful snippets, based on the "Today I Learned (TIL)" repo idea. Predominantly for my own use... located [here](/spells/)
+
+### me
+
+- [About me](/about/)
+- [My resume](/resume/)
