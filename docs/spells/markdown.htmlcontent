@@ -1,0 +1,28 @@
+<h3 id="embedding-images">Embedding Images</h3>
+<p>Embedding images is done via a syntax similar to regular links:</p>
+<pre><code class="language-md">![alt text](http://example.com/image.jpg)
+</code></pre>
+<h3 id="embedded-html">Embedded HTML</h3>
+<p>Markdown supports HTML, so you can put in regular HTML elements (like <code>&lt;div&gt;</code>) if you want, but doing so means that anything within that element must also be regular HTML. In some cases, it's convenient to demarcate a section of a markdown doc with an HTML element, but then write markdown within that element. In most varieties of markdown, you can accomplish that by specifying <code>markdown="1"</code> in the tag like so:</p>
+<pre><code class="language-md">### Header
+
+Regular *markdown* here
+
+&lt;div class="something" markdown="1"&gt;
+- regular markdown
+- once *again*
+&lt;/div&gt;
+</code></pre>
+<p>Source: <a href="https://css-tricks.com/little-stuff-markdown-always-forget-google/">https://css-tricks.com/little-stuff-markdown-always-forget-google/</a></p>
+<h3 id="lists-with-multiple-lines">Lists with Multiple Lines</h3>
+<p>Often times I want to use lists in markdown, but have the contents of each list element span multiple lines. Doing that with regular line breaks, however, causes the markdown parser to start a new list (and restart the numbering). The solution is to indent the subsequent lines of a given list item to ensure that it is considered part of that same item. For example:</p>
+<pre><code class="language-md">1. List item 1
+   more stuff for item 1
+2. List item 2
+</code></pre>
+<p>Source: <a href="https://css-tricks.com/little-stuff-markdown-always-forget-google/">https://css-tricks.com/little-stuff-markdown-always-forget-google/</a></p>
+<h3 id="header-ids">Header IDs</h3>
+<p>Sometimes it's convenient to add custom IDs to markdown headers to allow for intra-page navigation/ scripting. Different varieties of markdown handle this slightly differently, but most will automatically add an ID on all headings automatically (which matches the heading text). Some will let you customize the ID like so:</p>
+<pre><code class="language-md">### Header {#custom-id}
+</code></pre>
+<p>Source: <a href="https://css-tricks.com/little-stuff-markdown-always-forget-google/">https://css-tricks.com/little-stuff-markdown-always-forget-google/</a></p>
