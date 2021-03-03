@@ -3,7 +3,7 @@ title: "homepage"
 template: index.mustache
 ---
 
-Site under construction... old links should still work. For old layout see [here](http://old.jasondsouza.org).
+Personal website of [Jason Dsouza](/about). Engineer, hacker, sculptor. For old layout see [here](http://old.jasondsouza.org).
 
 ### posts
 
@@ -21,11 +21,15 @@ Site under construction... old links should still work. For old layout see [here
 
 ### projects
 
-- See the projects I've been working on at [https://cdn.dsouza.io/](https://cdn.dsouza.io/)
+See the publicly accessible projects I've worked on through the years at [https://cdn.dsouza.io](https://cdn.dsouza.io/)
+
+### recipes
+
+Family recipes, cocktail experiments, and gastronomic observations. Styled with a focus on showing the important information up front, followed by personal notes and learnings. Breaks from the recipe site tradition of being littered with ads, popovers, calls to action, and banal SEO optimizing pre-recipe bloviation. Available at [https://recipes.dsouza.io](https://recipes.dsouza.io)
 
 ### spellbook
 
-- Collection of useful snippets, based on the "Today I Learned (TIL)" repo idea. Predominantly for my own use... located [here](/spells/)
+Collection of useful snippets, based on the "Today I Learned (TIL)" repo idea. Predominantly for my own use... located [here](/spells/)
 
 ### me
 
