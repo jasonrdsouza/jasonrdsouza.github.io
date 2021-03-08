@@ -1,4 +1,9 @@
 
 Sorry, the requested page could not be found.
 
-<script src="/scripts/trailingSlash.dart.js"></script
+<!--
+Github seems to have fixed the trailing slash issue recently, so I need to remove this
+functionality to avoid a redirect loop on pages that actually 404.
+
+<script src="/scripts/trailingSlash.dart.js"></script>
+-->
