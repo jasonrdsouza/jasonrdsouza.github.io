@@ -46,12 +46,17 @@
 <p>All these less commands can be passed in as args, or when already in less.
 Also, some of the search and movement syntax of vim works in less as well.</p>
 <h2 id="tcpdump">Tcpdump</h2>
+<h3 id="direct-usage">Direct Usage</h3>
 <p>To make the output legible, as well as manageable, make sure to</p>
 <ol>
 <li>specify the port you care about</li>
 <li>use the -XX and -i flags to get ascii output next to the binary</li>
 </ol>
 <pre><code class="language-bash">sudo tcpdump -XX -i eth0 port 44380 &gt; /tmp/dump
+</code></pre>
+<h3 id="pretty-print-pcap-file">Pretty Print PCAP file</h3>
+<p>If you have an existing PCAP file (for example, from <a href="https://www.wireshark.org/">wireshark</a>), you can run it through tcpdump to pretty print the contents as follows:</p>
+<pre><code class="language-bash">tcpdump -qns 0 -X -r file.pcap
 </code></pre>
 <h2 id="find">Find</h2>
 <h3 id="list-files-with-specific-extension-and-perform-command-on-them">List files with specific extension and perform command on them</h3>

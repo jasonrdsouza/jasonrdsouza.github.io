@@ -40,6 +40,7 @@ Also, some of the search and movement syntax of vim works in less as well.
 
 ## Tcpdump
 
+### Direct Usage
 To make the output legible, as well as manageable, make sure to
 1. specify the port you care about
 2. use the -XX and -i flags to get ascii output next to the binary
@@ -47,6 +48,14 @@ To make the output legible, as well as manageable, make sure to
 ```bash
 sudo tcpdump -XX -i eth0 port 44380 > /tmp/dump
 ```
+
+### Pretty Print PCAP file
+If you have an existing PCAP file (for example, from [wireshark](https://www.wireshark.org/)), you can run it through tcpdump to pretty print the contents as follows:
+
+```bash
+tcpdump -qns 0 -X -r file.pcap
+```
+
 
 ## Find
 

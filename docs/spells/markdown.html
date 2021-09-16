@@ -49,6 +49,10 @@ Regular *markdown* here
 <pre><code class="language-md">### Header {#custom-id}
 </code></pre>
 <p>Source: <a href="https://css-tricks.com/little-stuff-markdown-always-forget-google/">https://css-tricks.com/little-stuff-markdown-always-forget-google/</a></p>
+<h3 id="convert-markdown-to-xwiki">Convert Markdown to Xwiki</h3>
+<p>A markdown file can be converted to Xwiki format (and a bunch of other formats) using <a href="https://pandoc.org/">Pandoc</a> as follows:</p>
+<pre><code class="language-bash">pandoc -f markdown &lt;file.md&gt; -t xwiki -o &lt;file.xwiki&gt;
+</code></pre>
 
 </main>
 

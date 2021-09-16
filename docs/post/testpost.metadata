@@ -1,1 +1,1 @@
-{"title":"Test Post","tags":["formatting","templates","embedding","a really long tag","trying to overflow"],"date":"2020-08-22","template":"post.mustache","testTag":"tag variable","CORK_url":"post/testpost.html","CORK_reading_time":3}
+{"title":"Test Post","tags":["formatting","templates","embedding","a really long tag","trying to overflow"],"date":"2020-08-22","template":"post.mustache","testTag":"tag variable","CORK_url":"post/testpost.html","CORK_reading_time":3,"CORK_lix_readability_score":30,"CORK_ari_readability_score":8}

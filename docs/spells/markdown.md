@@ -50,3 +50,11 @@ Sometimes it's convenient to add custom IDs to markdown headers to allow for int
 ```
 
 Source: https://css-tricks.com/little-stuff-markdown-always-forget-google/
+
+### Convert Markdown to Xwiki
+
+A markdown file can be converted to Xwiki format (and a bunch of other formats) using [Pandoc](https://pandoc.org/) as follows:
+
+```bash
+pandoc -f markdown <file.md> -t xwiki -o <file.xwiki>
+```
