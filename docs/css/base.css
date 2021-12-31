@@ -12,7 +12,7 @@ html {
 }
 @media all and (max-width: 715px) {
   html {
-    font-size: 18px;
+    font-size: 20px;
   }
   body {
     padding-left: 1.25rem;
