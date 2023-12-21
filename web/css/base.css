@@ -41,6 +41,20 @@ body {
   hyphens: auto;
 }
 
+footer {
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+.footerImg {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  border-radius: 0%;
+  box-shadow: none;
+  vertical-align: bottom;
+}
+
 .subtitle {
   font-size: 0.8rem;
 }
