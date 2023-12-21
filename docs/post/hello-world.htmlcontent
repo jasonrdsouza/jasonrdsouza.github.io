@@ -3,15 +3,15 @@ It's not that I don't have interests, I simply find it uninteresting to keep a l
 interests. Unfortunately, that makes me sound sort of boring, so I decided to start this blog. Here I will write about things that interest me:
 articles I read, skills I am learning, and sometimes, simply stream of consciousness.</p>
 <pre><code class="language-python">def print_greeting
-    print("Hello World")
+    print(&quot;Hello World&quot;)
 
 print_greeting
-#=&gt; "Hello World"
+#=&gt; &quot;Hello World&quot;
 </code></pre>
 <p>The blog is mainly for me, but I hope some of the posts will be useful
 and informative to others. I have a few topics in mind to write about, and plan to keep the posts
 organized using labels, so people that only care about certain topics may tailor their consumption accordingly.
-The frequency of these labels will ideally serve as a dynamic indication of my "interests", and
+The frequency of these labels will ideally serve as a dynamic indication of my &quot;interests&quot;, and
 become the aforementioned interests list that I am so disinterested in.</p>
 <p>To end this post, and initiate the digitization of my interests,
 here is a quote by one of my favorite writers, told to graduating
@@ -19,8 +19,8 @@ seniors at a commencement ceremony:</p>
 <blockquote>
 <p>There are these two young fish swimming along and they happen to meet
 an older fish swimming the other way, who nods at them and says
-"Morning, boys. How's the water?" And the two young fish swim on for a
+&quot;Morning, boys. How's the water?&quot; And the two young fish swim on for a
 bit, and then eventually one of them looks over at the other and goes
-"What the hell is water?"
+&quot;What the hell is water?&quot;
 ― David Foster Wallace</p>
 </blockquote>

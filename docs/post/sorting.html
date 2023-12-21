@@ -29,13 +29,13 @@ built in sorting algorithm that's a simple function call away.
 Practically, this removes the need to spend much time contemplating the
 implementation, efficiencies, and tradeoffs
 behind the many existing ways to sort,
-and instead focus on the "actual problem".
+and instead focus on the &quot;actual problem&quot;.
 Nonetheless, it is informative to walk through the basics of sorting
 in order to gain a more comprehensive understanding of the current state of the art algorithms.</p>
 <p>Before diving into specifics, there are 3 things to note about sorting in general.</p>
 <ol>
 <li>All general purpose sorting algorithms fall into the category of <a href="http://en.wikipedia.org/wiki/Comparison_sort">comparison sorts</a>, meaning that they depend solely on the ability to compare any two elements and determine which one should come first in the sorted result, and the ability to rearrange elements.</li>
-<li>Sorting algorithms can either use additional buffer space to do their work, or perform the sort "in place". In place sorts use constant (or occasionally logarithmic) additional storage space, as opposed to <code>O(n)</code> or more additional memory via a working buffer for regular implementations.</li>
+<li>Sorting algorithms can either use additional buffer space to do their work, or perform the sort &quot;in place&quot;. In place sorts use constant (or occasionally logarithmic) additional storage space, as opposed to <code>O(n)</code> or more additional memory via a working buffer for regular implementations.</li>
 <li>All <strong>comparison</strong> based sorting algorithms require at least <a href="http://en.wikipedia.org/wiki/Time_complexity#Linearithmic_time">linearithmic</a> asymptotic running time.</li>
 </ol>
 <p>The comparison sorting properties are codified in an <a href="http://golang.org/pkg/sort/#Interface">interface</a> like the following:</p>
@@ -49,7 +49,7 @@ in order to gain a more comprehensive understanding of the current state of the 
 </code></pre>
 <p>All the comparison based sorting implementations below will depend solely on that interface.</p>
 <h3 id="selection-sort">Selection Sort</h3>
-<p>Upon learning of the "sorting problem",
+<p>Upon learning of the &quot;sorting problem&quot;,
 this is the algorithm that many students initially devise.
 Essentially, the idea is to <em>select</em> the smallest element,
 and move it to the front of the input collection.
@@ -200,7 +200,7 @@ but the space vs. time tradeoff is intrinsic.</p>
 and was the default sorting approach in Unix, C, and Java for some time.
 It has been replaced by fancier sorts with better real-world runtimes,
 but remains very effective in practice.
-The idea behind its implementation is to choose a "pivot" element from the collection at random,
+The idea behind its implementation is to choose a &quot;pivot&quot; element from the collection at random,
 and push everything less than the pivot to its left,
 and everything greater than the pivot to its right.
 Then, simply recurse on the left and right sub-collections

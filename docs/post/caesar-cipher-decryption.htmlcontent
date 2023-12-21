@@ -11,7 +11,7 @@ scripting knowledge, you could explain the puzzle to a computer,
 and have it do most of the tedious work for you.</p>
 <p>As an example, take puzzle #3:</p>
 <p><img src="/static/posts/google-security-key-challenge-3.png" alt="Google Security Key Challenge #3" /></p>
-<p>Accompanying this puzzle is the hint "Caesar". At first, this text
+<p>Accompanying this puzzle is the hint &quot;Caesar&quot;. At first, this text
 looks like gibberish, but we know it is in fact
 <a href="https://en.wikipedia.org/wiki/Ciphertext">ciphertext</a>. Armed
 with our hint, we can begin trying to decode it.</p>
@@ -36,7 +36,7 @@ your input text by that many letters in the chosen direction.
 In the example pictured below, the number is 3 (<code>N = 3</code>), and
 the direction is Left (<code>D = &lt;-</code>), causing the input letter <code>E</code>
 to be encrypted to the letter <code>B</code>. Notice also how the shifting
-"wraps around".</p>
+&quot;wraps around&quot;.</p>
 <p><img src="/static/posts/caesar-cipher.png" alt="Caesar Cipher Example" /></p>
 <p>This cipher seems like a pretty good candidate to decrypt our
 ciphertext. Now, we just have to figure out what <code>N</code> and <code>D</code> are! First,
@@ -44,7 +44,7 @@ a few things to note. The ciphertext includes punctuation, which we are
 going to assume is ignored by the cipher. It also includes both upper
 and lower case letters, but we'll assume that the cipher is
 case-insensitive. Finally, while the caesar cipher is defined in
-terms of <code>N</code> and <code>D</code>, since the shifts "wrap around" (if you
+terms of <code>N</code> and <code>D</code>, since the shifts &quot;wrap around&quot; (if you
 have to shift past the last letter, you wrap around to the first
 one), any <code>(N,D)</code> pair has an equivalent pair with it's
 direction reversed.</p>
@@ -70,7 +70,7 @@ the boring part.</p>
 <a href="https://www.python.org/">Python</a>, so I'll use that, but
 the general concepts are the same regardless of language.</p>
 <p>Lets start with the alphabet:</p>
-<pre><code class="language-python">ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+<pre><code class="language-python">ALPHABET = &quot;abcdefghijklmnopqrstuvwxyz&quot;
 </code></pre>
 <p>Now, we need some way to represent the caesar cipher. We know
 from earlier that the only initialization parameter the cipher
@@ -92,8 +92,8 @@ a given cipher, and outputs the decrypted text.</p>
 
 def decrypt(cipher, ciphertext):
   # remember we need to ignore letter case and punctuation
-  decrypted = [letter if letter in punctuation + " " else cipher[letter] for letter in ciphertext.lower()]
-  return "".join(decrypted)
+  decrypted = [letter if letter in punctuation + &quot; &quot; else cipher[letter] for letter in ciphertext.lower()]
+  return &quot;&quot;.join(decrypted)
 </code></pre>
 <p>With those pieces in place, lets try to crack the code with
 <a href="https://en.wikipedia.org/wiki/Brute-force_attack">brute force</a>,
@@ -105,12 +105,12 @@ is relative to the speed of our computer. (Remember that the key
 space in this case is the amount of possible values for <code>N</code>,
 which we determined earlier was 26).</p>
 <p>The brute force approach can be accomplished like this:</p>
-<pre><code class="language-python">CIPHER_TEXT = "Wuhdw brxu sdvvzrug olnh brxu wrrwkeuxvk. Grq'w ohw dqbergb hovh xvh lw, dqg jhw d qhz rqh hyhub vla prqwkv. Foliirug Vwroo"
+<pre><code class="language-python">CIPHER_TEXT = &quot;Wuhdw brxu sdvvzrug olnh brxu wrrwkeuxvk. Grq'w ohw dqbergb hovh xvh lw, dqg jhw d qhz rqh hyhub vla prqwkv. Foliirug Vwroo&quot;
 
 for n in range(KEY_SPACE):
   cipher = create_caesar_cipher(n)
   plaintext = decrypt(cipher, CIPHER_TEXT)
-  print("{}:\t{}".format(n, plaintext))
+  print(&quot;{}:\t{}&quot;.format(n, plaintext))
 </code></pre>
 <p>After running that code, all that's left to do is read through each of
 the <a href="https://en.wikipedia.org/wiki/Plaintext">plaintext</a> entries,
@@ -147,7 +147,7 @@ you spot the correctly decrypted value?</p>
 <p>Writing software is fundamentally about teaching computers to
 solve problems for you, and this cryptography challenge is a
 quintessential example of how useful a little knowledge of
-programming can be. We took a "real world" problem, came up with
+programming can be. We took a &quot;real world&quot; problem, came up with
 an approach to solve it, and implemented that approach in a few
 lines of code. Obviously the cryptographic methods used
 in this case are toy examples, and the solution is fairly

@@ -51,7 +51,7 @@ with open('rgb_mapping.json', 'w') as f:
 <h2 id="compression-analysis">Compression Analysis</h2>
 <p>With the serialized JSON data in hand, let's try a few compression algorithms and see how much space they save.</p>
 <pre><code class="language-sh"># Recreate the pretty JSON version of the color mapping
-~&gt; cat rgb_mapping.json | jq "." &gt; rgb_mapping.pretty.json
+~&gt; cat rgb_mapping.json | jq &quot;.&quot; &gt; rgb_mapping.pretty.json
 # Regular GZIP compression
 ~&gt; gzip -k rgb_mapping.json
 ~&gt; gzip -k rgb_mapping.pretty.json
@@ -84,9 +84,9 @@ with open('rgb_mapping.json', 'w') as f:
 </code></pre>
 <p>For comparison, at the end of Rob's post, he had tailored his serialization format such that it took 8 bytes per color pairing instead of the original 26, meaning that the serialized file would be 134MB. Compared to the originally calculated 434MB, that's a 70% reduction in size!</p>
 <p>As we see above though, that 70% reduction is peanuts compared to using a standard compression library. The most well known and straightforward approach of vanilla GZIP compression yields a 41MB file, for a 90% reduction in size, already handily beating the custom serialization approach for little more than a standard library <code>gzip.compress</code> call.</p>
-<p>We can also see that the compression libraries barely notice the "prettified" JSON and redundant characters (which makes sense when you think about how they work), which is a nice side-benefit.</p>
+<p>We can also see that the compression libraries barely notice the &quot;prettified&quot; JSON and redundant characters (which makes sense when you think about how they work), which is a nice side-benefit.</p>
 <p>Finally, if you're feeling adventurous, you can use a more heavily optimized compression library at the cost of slower serialization speed. <a href="https://en.wikipedia.org/wiki/Bzip2">BZIP2</a> is a well established example which brings the file size down to the 18MB range, for a 96% reduction in size.
-<span class="mgnote">An astute eye will notice that "fast" BZIP2 compression results in a smaller file than regular or "best" BZIP2. Explaining why that happens is left as an exercise for the reader</span></p>
+<span class="mgnote">An astute eye will notice that &quot;fast&quot; BZIP2 compression results in a smaller file than regular or &quot;best&quot; BZIP2. Explaining why that happens is left as an exercise for the reader</span></p>
 <p><a href="https://en.wikipedia.org/wiki/Brotli">Brotli</a>, which uses even more sophisticated compression techniques gets the file size all the way down to 7.6MB, for a whopping 98.2% reduction in size.</p>
 <p>The fact that Brotli is able to take the RGB mapping data and losslessly make it <em>57 times</em> smaller is quite incredible. Even more interesting, <a href="https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html">Brotli has been optimized by Google for serving web assets</a>, and so retains relatively quick decompression speeds (compression takes quite long by comparison, but since web assets are written once and served many times, that is an acceptable tradeoff). That fits nicely into the framework Rob constructed around <a href="https://robertheaton.com/pfab17-precomputation-sounds-like-cheating-but-isnt/">precomputation tradeoffs</a> for this ASCII art program.</p>
 <h2 id="concluding-thoughts">Concluding Thoughts</h2>

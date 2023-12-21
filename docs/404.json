@@ -1,1 +1,1 @@
-{"title":"Unknown Page","template":"index.mustache","CORK_url":"404.html","CORK_reading_time":1,"CORK_lix_readability_score":25,"CORK_ari_readability_score":15,"content":"<p>Sorry, the requested page could not be found.</p><script src=\"/scripts/trailingSlash.dart.js\"></script>\n"}
+{"title":"Unknown Page","template":"index.mustache","CORK_url":"404.html","CORK_reading_time":1,"CORK_lix_readability_score":25,"CORK_ari_readability_score":15,"content":"<p>Sorry, the requested page could not be found.</p>\n<script src=\"/scripts/trailingSlash.dart.js\"></script>\n"}

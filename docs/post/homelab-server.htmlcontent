@@ -32,7 +32,7 @@ home.dsouza.io.		59	IN	A	108.20.205.69
 </code></pre>
 <p>In this case, you can see that <a href="https://wiki.dsouza.io"><code>wiki.dsouza.io</code></a> points to <a href="https://home.dsouza.io"><code>home.dsouza.io</code></a>, which in turn points to my home server.</p>
 <h2 id="port-forwarding">Port Forwarding</h2>
-<p>With Dynamic DNS enabled, requests to your domain name will resolve to your IP address, but that doesn't mean that they will automatically be able to hit your home server. Most routers have a firewall to disallow incoming traffic. This is a good thing, since the majority of users don't intend to expose any services to the wider internet, but in our case, we need to enable incoming traffic to hit our server. To do that, we can open up specific ports on the routers' firewall and send the traffic that reaches them to a chosen machine running on our local network. This process is colloquially referred to as "<a href="https://en.wikipedia.org/wiki/Port_forwarding">port forwarding</a>".</p>
+<p>With Dynamic DNS enabled, requests to your domain name will resolve to your IP address, but that doesn't mean that they will automatically be able to hit your home server. Most routers have a firewall to disallow incoming traffic. This is a good thing, since the majority of users don't intend to expose any services to the wider internet, but in our case, we need to enable incoming traffic to hit our server. To do that, we can open up specific ports on the routers' firewall and send the traffic that reaches them to a chosen machine running on our local network. This process is colloquially referred to as &quot;<a href="https://en.wikipedia.org/wiki/Port_forwarding">port forwarding</a>&quot;.</p>
 <p>Unless you need to expose services on non-standard ports, you likely only want to forward the standard http ports (<code>80</code> for regular traffic, and <code>443</code> for TLS traffic). They should be forwarded to the local IP address of the machine you're running your reverse proxy on, with any further routing decisions performed by the reverse proxy itself.</p>
 <p><em>Note that some routers can themselves run a reverse proxy, allowing you to contain all the routing logic to the router itself.</em></p>
 <h2 id="local-firewall">Local Firewall</h2>
@@ -179,7 +179,7 @@ server {
     listen 80;
     server_name perf.mattwilliams.cloud;
 
-    auth_basic           "Administrator's Area";
+    auth_basic           &quot;Administrator's Area&quot;;
     auth_basic_user_file /etc/apache2/.htpasswd;
 
     location / {
@@ -192,7 +192,7 @@ server {
     listen 443;
     server_name perf.mattwilliams.cloud;
 
-    auth_basic           "Administrator's Area";
+    auth_basic           &quot;Administrator's Area&quot;;
     auth_basic_user_file /etc/apache2/.htpasswd;
 
     location / {
@@ -207,6 +207,6 @@ server {
 
 ... many more services omitted
 </code></pre>
-<p>Both follow a similar pattern of redirecting a subdomain request to a locally running service. This is where the "reverse proxy" name comes from, because unlike a "regular" proxy, which a user goes through in order to access the wider internet, a reverse proxy fronts web accessible resources, serving them at a clients request.</p>
+<p>Both follow a similar pattern of redirecting a subdomain request to a locally running service. This is where the &quot;reverse proxy&quot; name comes from, because unlike a &quot;regular&quot; proxy, which a user goes through in order to access the wider internet, a reverse proxy fronts web accessible resources, serving them at a clients request.</p>
 <h2 id="success">Success</h2>
 <p>And with that, navigating to <a href="https://home.dsouza.io"><code>home.dsouza.io</code></a> resolves to the new box in my house and displays a landing page served by Caddy, and <a href="https://wiki.dsouza.io"><code>wiki.dsouza.io</code></a> directs clients to the wiki software I have running!</p>

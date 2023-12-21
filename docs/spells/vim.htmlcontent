@@ -68,11 +68,11 @@
 <pre><code>:%normal $x
 </code></pre>
 <h2 id="execute-command-on-multiple-lines">Execute command on multiple lines</h2>
-<p>The <code>g</code> command is the "global" command to execute other commands. In this case, you can use it with the <code>norm</code> command to perform a change on lines that match a specific pattern (or all lines).</p>
+<p>The <code>g</code> command is the &quot;global&quot; command to execute other commands. In this case, you can use it with the <code>norm</code> command to perform a change on lines that match a specific pattern (or all lines).</p>
 <p>For example, if you want to add a semicolon to the end of all lines that start with a number, you could do that as follows:</p>
 <pre><code class="language-vim">:g/^\d/norm A;
 </code></pre>
-<p>In this case, instead of substituting the line for something else, you are telling Vim to execute the "normal mode" command of moving to the end of the line and entering insert mode (with <code>A</code>), and then adding a semicolon.</p>
+<p>In this case, instead of substituting the line for something else, you are telling Vim to execute the &quot;normal mode&quot; command of moving to the end of the line and entering insert mode (with <code>A</code>), and then adding a semicolon.</p>
 <p>This is pretty powerful because you have the ability to perform a motion on all the lines matching a specific pattern.</p>
 <h2 id="visual-select-and-insert">Visual select and insert</h2>
 <pre><code class="language-vim">CTRL-v

@@ -1,5 +1,5 @@
-<p>I've been working with Ruby a lot lately, and have come to enjoy the expressive succinctness of the language. It is credited as a language that strives to make programming enjoyable, and minimize the amount of work the programmer must do. To accomplish those goals, Ruby allows the flexibility to do things in many different ways. This approach, in contrast with the "<a href="http://python.org/doc/humor/#the-zen-of-python">one right and obvious way</a>" mentality, allows the programmer to use a style suited to their way of approaching the problem at hand. The resulting syntactic flexibility is a double edged sword, however, and can lead to concise and beautiful code in the right hands, or utterly incomprehensible code in the wrong ones.</p>
-<p>In that regard, Ruby seems quite similar to English. Both are complex, multifaceted languages, which take time to perfect, and must be studied before they can be applied effectively. One of the seminal works regarding English writing style is a book by William Strunk Jr. and E. B. White called "<a href="http://en.wikipedia.org/wiki/The_Elements_of_Style">The Elements of Style</a>". Instead of a comprehensive guide, the short book presents a few powerful rules that greatly enhance the quality of most writing.  This post is my attempt at creating a similar style guide for Ruby. For a more wholistic Ruby style guide, see: <a href="https://github.com/bbatsov/ruby-style-guide">https://github.com/bbatsov/ruby-style-guide</a>.</p>
+<p>I've been working with Ruby a lot lately, and have come to enjoy the expressive succinctness of the language. It is credited as a language that strives to make programming enjoyable, and minimize the amount of work the programmer must do. To accomplish those goals, Ruby allows the flexibility to do things in many different ways. This approach, in contrast with the &quot;<a href="http://python.org/doc/humor/#the-zen-of-python">one right and obvious way</a>&quot; mentality, allows the programmer to use a style suited to their way of approaching the problem at hand. The resulting syntactic flexibility is a double edged sword, however, and can lead to concise and beautiful code in the right hands, or utterly incomprehensible code in the wrong ones.</p>
+<p>In that regard, Ruby seems quite similar to English. Both are complex, multifaceted languages, which take time to perfect, and must be studied before they can be applied effectively. One of the seminal works regarding English writing style is a book by William Strunk Jr. and E. B. White called &quot;<a href="http://en.wikipedia.org/wiki/The_Elements_of_Style">The Elements of Style</a>&quot;. Instead of a comprehensive guide, the short book presents a few powerful rules that greatly enhance the quality of most writing.  This post is my attempt at creating a similar style guide for Ruby. For a more wholistic Ruby style guide, see: <a href="https://github.com/bbatsov/ruby-style-guide">https://github.com/bbatsov/ruby-style-guide</a>.</p>
 <h2 id="elements">Elements</h2>
 <h3 id="create-importable-scripts">Create Importable Scripts</h3>
 <ul>
@@ -34,13 +34,13 @@ wines.include?(my_favorite_wine)
 <li>It is preferable to use the interpolation syntax rather than the concatenation (+) operator to construct strings.</li>
 <li>In cases where a string does not need to be interpolated, favor single quotes.</li>
 </ul>
-<pre><code class="language-ruby">s = "strings"
+<pre><code class="language-ruby">s = &quot;strings&quot;
 # Bad
-puts "Concatenated " + s + " example"
-puts "Hello World"
+puts &quot;Concatenated &quot; + s + &quot; example&quot;
+puts &quot;Hello World&quot;
 
 # Good
-puts "Concatenated #{s} example"
+puts &quot;Concatenated #{s} example&quot;
 puts 'Hello World'
 </code></pre>
 <h3 id="favor-end-of-line-modifiers">Favor End of Line Modifiers</h3>
@@ -64,7 +64,7 @@ drink(wine) unless wine.corked?
 <pre><code class="language-ruby">cellar.empty? # should return boolean value
 cellar.clear! # modifies the state of the cellar
 </code></pre>
-<h3 id="favor-or-equal-idiom-over-nil-checks">Favor "Or Equal" Idiom over nil Checks</h3>
+<h3 id="favor-or-equal-idiom-over-nil-checks">Favor &quot;Or Equal&quot; Idiom over nil Checks</h3>
 <ul>
 <li>The <code>a ||= b</code> operator, which is syntactic sugar for <code>a || a = b</code>, is the idiomatic way to set a variable if it is not already set.</li>
 </ul>
@@ -86,8 +86,8 @@ a ||= b
 </ul>
 <pre><code class="language-ruby"># Bad
 begin
-    file = File.open("/tmp/filename", "w")
-    file.write("some text")
+    file = File.open(&quot;/tmp/filename&quot;, &quot;w&quot;)
+    file.write(&quot;some text&quot;)
 rescue IOError =&gt; e
     # need to ensure that the file handle gets closed even if an error occurs
 ensure
@@ -95,7 +95,7 @@ ensure
 end
 
 # Good
-File.open('/tmp/filename', 'w') {|file| file.write("some text")} # file handle closed once block exits
+File.open('/tmp/filename', 'w') {|file| file.write(&quot;some text&quot;)} # file handle closed once block exits
 </code></pre>
 <h3 id="prefer-hash-for-optional-args">Prefer Hash for Optional Args</h3>
 <ul>
@@ -206,5 +206,5 @@ result = Hash[keys.zip(values)]
 <h2 id="summary">Summary</h2>
 <p>Quality Ruby code should be simple, readable, and <a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a>. The rules above are solid guidelines that will lead to better code if followed properly. That being said, as with any set of rules, there are always exceptions, so be judicious in their application. As Ralph Waldo Emerson once said,</p>
 <blockquote>
-<p>"A foolish consistency is the hobgoblin of little minds"</p>
+<p>&quot;A foolish consistency is the hobgoblin of little minds&quot;</p>
 </blockquote>
