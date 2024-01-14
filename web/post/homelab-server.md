@@ -56,7 +56,7 @@ Unless you need to expose services on non-standard ports, you likely only want t
 *Note that some routers can themselves run a reverse proxy, allowing you to contain all the routing logic to the router itself.*
 
 ## Local Firewall
-In addition to the router firewall, you're server itself may be running a firewall. [UFW](https://wiki.ubuntu.com/UncomplicatedFirewall) is a common firewall frontend for Ubuntu installs, but depending on what OS you're running, something else may be used. Regardless, you'll have to ensure that (at the very least) ports `80` and `443` are unblocked here as well. If you plan to SSH into your server, you'll want to unblock the port you use for that as well.
+In addition to the router firewall, your server itself may be running a firewall. [UFW](https://wiki.ubuntu.com/UncomplicatedFirewall) is a common firewall frontend for Ubuntu installs, but depending on what OS you're running, something else may be used. Regardless, you'll have to ensure that (at the very least) ports `80` and `443` are unblocked here as well. If you plan to SSH into your server, you'll want to unblock the port you use for that as well.
 
 A minimal sample of useful UFW commands:
 
