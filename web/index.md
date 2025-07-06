@@ -7,6 +7,7 @@ Personal website of [Jason Dsouza](/about). Engineer, hacker, sculptor. For old 
 
 ### posts
 
+- [Agentic Coding](post/agentic-coding)
 - [Homelab Server Setup](post/homelab-server)
 - [PFAB Compression](post/pfab-compression)
 - [Caesar Cipher Decryption](post/caesar-cipher-decryption)
