@@ -1,6 +1,7 @@
 <p>Personal website of <a href="/about">Jason Dsouza</a>. Engineer, hacker, sculptor. For old layout see <a href="http://old.jasondsouza.org">here</a>.</p>
 <h3 id="posts">posts</h3>
 <ul>
+<li><a href="post/agentic-coding">Agentic Coding</a></li>
 <li><a href="post/homelab-server">Homelab Server Setup</a></li>
 <li><a href="post/pfab-compression">PFAB Compression</a></li>
 <li><a href="post/caesar-cipher-decryption">Caesar Cipher Decryption</a></li>
