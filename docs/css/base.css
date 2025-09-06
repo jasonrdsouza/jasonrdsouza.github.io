@@ -10,7 +10,7 @@ html {
         font-size: 23px;
     }
 }
-@media all and (max-width: 715px) {
+@media all and (max-width: 850px) {
     html {
         font-size: 22px;
     }
