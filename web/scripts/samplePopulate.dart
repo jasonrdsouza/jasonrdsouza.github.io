@@ -1,8 +1,8 @@
-import 'dart:html';
+import 'package:web/web.dart';
 
 main() {
-  var sampleDiv = querySelector('#sample');
+  var sampleDiv = document.querySelector('#sample');
 
-  var message = ParagraphElement()..text = 'Hello from dart!';
-  sampleDiv!.children.add(message);
+  var message = HTMLParagraphElement()..textContent = 'Hello from dart!';
+  sampleDiv!.appendChild(message);
 }

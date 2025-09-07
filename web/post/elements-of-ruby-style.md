@@ -1,5 +1,6 @@
 ---
 date: '2014-02-23'
+rss: true
 draft: false
 template: post.mustache
 title: "The Elements of (Ruby) Style"

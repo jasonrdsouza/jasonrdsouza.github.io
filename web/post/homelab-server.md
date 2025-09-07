@@ -1,8 +1,10 @@
 ---
 title: "Homelab Server Setup"
+rss: true
 tags: ['homelab', 'caddy']
 date: '2020-01-11'
 template: post.mustache
+description: "Notes on setting up a publicly accessible homelab server."
 ---
 
 ## Background

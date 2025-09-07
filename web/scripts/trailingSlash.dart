@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'package:web/web.dart';
 
 // Github Pages is smart enough to intuit `/page` from a `page.html` file, but won't do the same
 // for trailing slashes, so `/page/` results in a 404. This script attempts to remove the trailing
@@ -15,6 +15,7 @@ import 'dart:html';
 void main() {
   var currentLocation = window.location.href;
   if (currentLocation.endsWith("/")) {
-    window.location.replace(currentLocation.substring(0, currentLocation.length - 1));
+    window.location
+        .replace(currentLocation.substring(0, currentLocation.length - 1));
   }
 }

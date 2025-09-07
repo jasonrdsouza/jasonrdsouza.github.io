@@ -1,5 +1,6 @@
 ---
 date: '2012-12-29'
+rss: true
 template: post.mustache
 draft: false
 title: "Wholistic Health Criteria"

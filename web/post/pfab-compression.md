@@ -1,8 +1,10 @@
 ---
 title: "PFAB Compression"
+rss: true
 tags: ['engineering']
 date: '2020-07-16'
 template: post.mustache
+description: "A quick response to Rob Heaton's (PFAB #18) post on compression for beginners."
 ---
 
 ## Background
@@ -115,5 +117,3 @@ The fact that Brotli is able to take the RGB mapping data and losslessly make it
 
 ## Concluding Thoughts
 While inventing your own serialization technique and/or format is fun and can be a useful learning exercise, in real world production code, it's often more prudent to simply use a widely supported format like JSON and compress the resulting data. This ensures compatibility with other software and tools, and gets you out of the business of reinventing the wheel so you can focus on solving the business problems at hand.
-
-

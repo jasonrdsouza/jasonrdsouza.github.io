@@ -1,5 +1,6 @@
 ---
 date: '2015-02-03'
+rss: true
 template: post.mustache
 title: "Sorting"
 tags: ['programming', 'golang']

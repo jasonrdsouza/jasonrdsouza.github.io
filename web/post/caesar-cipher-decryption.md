@@ -1,5 +1,6 @@
 ---
 date: '2015-07-11'
+rss: true
 template: post.mustache
 title: "Caesar Cipher Decryption"
 tags: ['crypto', 'programming']
