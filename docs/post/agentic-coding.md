@@ -2,7 +2,9 @@
 title: "Agentic Coding - Copilot to Coworker"
 tags: ['llm', 'programming']
 date: '2025-07-06'
+rss: true
 template: post.mustache
+description: "Ruminations on AI assisted coding, and the mindset shift needed to take full advantage of it (in 2025)."
 ---
 
 
@@ -61,4 +63,3 @@ This will be a hard pill for some software developers to swallow. Until recently
 > Pharmacists have told me that a lot of patients are confused about their suppository meds and try to eat them. I think that is such a beautiful metaphor here. [Agentic coding] is unintuitive, biased towards hotshots, nonuniform in its productivity boosts, not yet well-supported by tools, and hard to measure. And you shouldn't eat it.
 
 It's up to you to decide what you *should* do with it to ensure you're maximizing its value.
-

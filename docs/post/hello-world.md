@@ -1,5 +1,6 @@
 ---
 date: '2012-05-28'
+rss: true
 draft: false
 template: post.mustache
 title: "Hello World"

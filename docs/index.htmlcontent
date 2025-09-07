@@ -1,4 +1,4 @@
-<p>Personal website of <a href="/about">Jason Dsouza</a>. Engineer, hacker, sculptor. For old layout see <a href="http://old.jasondsouza.org">here</a>.</p>
+<p>Personal website of <a href="/about">Jason Dsouza</a>. Engineer, hacker, sculptor.</p>
 <h3 id="posts">posts</h3>
 <ul>
 <li><a href="post/agentic-coding">Agentic Coding</a></li>
@@ -22,6 +22,7 @@
 <p>Collection of useful snippets, based on the &quot;Today I Learned (TIL)&quot; repo idea. Predominantly for my own use... located <a href="/spells/">here</a></p>
 <h3 id="me">me</h3>
 <ul>
-<li><a href="/about">About me</a></li>
-<li><a href="/resume">My resume</a></li>
+<li><a href="/about">about</a></li>
+<li><a href="/resume">resume</a></li>
+<li><a href="/rss.xml">rss feed</a></li>
 </ul>

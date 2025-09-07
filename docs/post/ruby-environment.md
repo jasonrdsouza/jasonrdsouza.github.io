@@ -1,5 +1,6 @@
 ---
 date: '2013-10-14'
+rss: true
 draft: false
 template: post.mustache
 title: "The Ruby Environment"

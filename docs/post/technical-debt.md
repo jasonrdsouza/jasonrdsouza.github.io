@@ -1,5 +1,6 @@
 ---
 date: '2013-10-19'
+rss: true
 template: post.mustache
 draft: false
 title: "On Technical Debt"

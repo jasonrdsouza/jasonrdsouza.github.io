@@ -3,7 +3,7 @@ title: "homepage"
 template: index.mustache
 ---
 
-Personal website of [Jason Dsouza](/about). Engineer, hacker, sculptor. For old layout see [here](http://old.jasondsouza.org).
+Personal website of [Jason Dsouza](/about). Engineer, hacker, sculptor.
 
 ### posts
 
@@ -34,5 +34,6 @@ Collection of useful snippets, based on the "Today I Learned (TIL)" repo idea. P
 
 ### me
 
-- [About me](/about)
-- [My resume](/resume)
+- [about](/about)
+- [resume](/resume)
+- [rss feed](/rss.xml)

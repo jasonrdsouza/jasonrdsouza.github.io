@@ -1,1 +1,1 @@
-{"date":"2012-05-28","draft":false,"template":"post.mustache","title":"Hello World","description":"I'm starting a blog...","CORK_url":"post/hello-world.html","CORK_reading_time":2,"CORK_lix_readability_score":37,"CORK_ari_readability_score":10}
+{"date":"2012-05-28","rss":true,"draft":false,"template":"post.mustache","title":"Hello World","description":"I'm starting a blog...","CORK_url":"post/hello-world.html","CORK_reading_time":2,"CORK_lix_readability_score":37,"CORK_ari_readability_score":10}
