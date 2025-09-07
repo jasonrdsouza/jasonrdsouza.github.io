@@ -4,7 +4,7 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  cork_site: ^3.1.0
+  cork_site: ^3.1.1
   build: any
 
 dev_dependencies:
